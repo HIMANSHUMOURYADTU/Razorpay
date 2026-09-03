@@ -1,0 +1,64 @@
+{
+  "note": "Pre-tested live-inject rows. Appended onto a working copy of batch 1 during demo — originals are never mutated.",
+  "scenarios": [
+    {
+      "id": "fee_3pct",
+      "title": "Vendor takes 3% this time",
+      "prompt": "Judge: settlement is net of 3% instead of 2%.",
+      "expect": "Not a silent match. 3% is outside the known 2%/2.36% fee table, so the controller HOLDs or ESCALATEs (typically UNRESOLVED on amount delta) instead of inventing a policy.",
+      "source_a": {
+        "txn_id": "pay_STRESS01",
+        "order_ref": "order_stress_01",
+        "amount": "970.00",
+        "settlement_date": "2026-08-12",
+        "description": "Razorpay settlement | Northwind Labs | order_stress_01 | net of 3.00% fee",
+        "currency": "INR"
+      },
+      "source_b": {
+        "ledger_id": "led_STRESS01",
+        "order_ref": "order_stress_01",
+        "amount": "1000.00",
+        "posting_date": "2026-08-11",
+        "description": "Ledger posting - Northwind Labs | order_stress_01",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "lag_20d",
+      "title": "Settlement lands 20 days late",
+      "prompt": "Judge: same amount, T+20.",
+      "expect": "TIME_LAG / HOLD. Stage 1 and Stage 2 date windows must not force-match. A 14-day memory rule should also refuse T+20.",
+      "source_a": {
+        "txn_id": "pay_STRESS02",
+        "order_ref": "order_stress_02",
+        "amount": "5400.00",
+        "settlement_date": "2026-08-31",
+        "description": "Razorpay settlement | Harbour Linens | order_stress_02 | delayed payout T+20",
+        "currency": "INR"
+      },
+      "source_b": {
+        "ledger_id": "led_STRESS02",
+        "order_ref": "order_stress_02",
+        "amount": "5400.00",
+        "posting_date": "2026-08-11",
+        "description": "Ledger posting - Harbour Linens | order_stress_02",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "orphan",
+      "title": "Settlement with no ledger counterpart",
+      "prompt": "Judge: extra payout, nothing in books.",
+      "expect": "UNRESOLVED / ESCALATE. Agent must not invent a ledger row.",
+      "source_a": {
+        "txn_id": "pay_STRESS03",
+        "order_ref": "order_stress_03",
+        "amount": "48000.00",
+        "settlement_date": "2026-08-14",
+        "description": "Razorpay settlement | Unknown Rail | order_stress_03 | NO LEDGER COUNTERPART",
+        "currency": "INR"
+      },
+      "source_b": null
+    }
+  ]
+}

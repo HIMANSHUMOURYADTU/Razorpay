@@ -1,0 +1,384 @@
+batch,gt_group,taxonomy,source_a_ids,source_b_ids,expected_behavior,injection_notes
+1,GT-0001,CLEAN,pay_A00001,led_B00001,Stage 1 exact match on order_ref + amount + date window.,identical amount 7546.00; settlement lag 1d
+1,GT-0002,CLEAN,pay_A00002,led_B00002,Stage 1 exact match on order_ref + amount + date window.,identical amount 14878.00; settlement lag 0d
+1,GT-0003,CLEAN,pay_A00003,led_B00003,Stage 1 exact match on order_ref + amount + date window.,identical amount 35991.00; settlement lag 1d
+1,GT-0004,CLEAN,pay_A00004,led_B00004,Stage 1 exact match on order_ref + amount + date window.,identical amount 2202.00; settlement lag 0d
+1,GT-0005,CLEAN,pay_A00005,led_B00005,Stage 1 exact match on order_ref + amount + date window.,identical amount 39703.00; settlement lag 0d
+1,GT-0006,CLEAN,pay_A00006,led_B00006,Stage 1 exact match on order_ref + amount + date window.,identical amount 42840.75; settlement lag 1d
+1,GT-0007,CLEAN,pay_A00007,led_B00007,Stage 1 exact match on order_ref + amount + date window.,identical amount 29689.50; settlement lag 0d
+1,GT-0008,CLEAN,pay_A00008,led_B00008,Stage 1 exact match on order_ref + amount + date window.,identical amount 10713.75; settlement lag 1d
+1,GT-0009,CLEAN,pay_A00009,led_B00009,Stage 1 exact match on order_ref + amount + date window.,identical amount 10439.00; settlement lag 1d
+1,GT-0010,CLEAN,pay_A00010,led_B00010,Stage 1 exact match on order_ref + amount + date window.,identical amount 6328.25; settlement lag 1d
+1,GT-0011,CLEAN,pay_A00011,led_B00011,Stage 1 exact match on order_ref + amount + date window.,identical amount 22791.50; settlement lag 0d
+1,GT-0012,CLEAN,pay_A00012,led_B00012,Stage 1 exact match on order_ref + amount + date window.,identical amount 30358.50; settlement lag 1d
+1,GT-0013,CLEAN,pay_A00013,led_B00013,Stage 1 exact match on order_ref + amount + date window.,identical amount 36428.00; settlement lag 2d
+1,GT-0014,CLEAN,pay_A00014,led_B00014,Stage 1 exact match on order_ref + amount + date window.,identical amount 23950.50; settlement lag 0d
+1,GT-0015,CLEAN,pay_A00015,led_B00015,Stage 1 exact match on order_ref + amount + date window.,identical amount 43586.00; settlement lag 1d
+1,GT-0016,CLEAN,pay_A00016,led_B00016,Stage 1 exact match on order_ref + amount + date window.,identical amount 15506.99; settlement lag 1d
+1,GT-0017,CLEAN,pay_A00017,led_B00017,Stage 1 exact match on order_ref + amount + date window.,identical amount 29964.75; settlement lag 1d
+1,GT-0018,CLEAN,pay_A00018,led_B00018,Stage 1 exact match on order_ref + amount + date window.,identical amount 24510.00; settlement lag 1d
+1,GT-0019,CLEAN,pay_A00019,led_B00019,Stage 1 exact match on order_ref + amount + date window.,identical amount 45046.75; settlement lag 2d
+1,GT-0020,CLEAN,pay_A00020,led_B00020,Stage 1 exact match on order_ref + amount + date window.,identical amount 11465.50; settlement lag 0d
+1,GT-0021,CLEAN,pay_A00021,led_B00021,Stage 1 exact match on order_ref + amount + date window.,identical amount 30544.25; settlement lag 2d
+1,GT-0022,CLEAN,pay_A00022,led_B00022,Stage 1 exact match on order_ref + amount + date window.,identical amount 45116.00; settlement lag 0d
+1,GT-0023,CLEAN,pay_A00023,led_B00023,Stage 1 exact match on order_ref + amount + date window.,identical amount 2353.99; settlement lag 1d
+1,GT-0024,CLEAN,pay_A00024,led_B00024,Stage 1 exact match on order_ref + amount + date window.,identical amount 4587.00; settlement lag 1d
+1,GT-0025,CLEAN,pay_A00025,led_B00025,Stage 1 exact match on order_ref + amount + date window.,identical amount 43204.25; settlement lag 1d
+1,GT-0026,CLEAN,pay_A00026,led_B00026,Stage 1 exact match on order_ref + amount + date window.,identical amount 17609.00; settlement lag 2d
+1,GT-0027,CLEAN,pay_A00027,led_B00027,Stage 1 exact match on order_ref + amount + date window.,identical amount 17469.75; settlement lag 1d
+1,GT-0028,CLEAN,pay_A00028,led_B00028,Stage 1 exact match on order_ref + amount + date window.,identical amount 38492.25; settlement lag 0d
+1,GT-0029,CLEAN,pay_A00029,led_B00029,Stage 1 exact match on order_ref + amount + date window.,identical amount 33642.25; settlement lag 0d
+1,GT-0030,CLEAN,pay_A00030,led_B00030,Stage 1 exact match on order_ref + amount + date window.,identical amount 7435.00; settlement lag 0d
+1,GT-0031,CLEAN,pay_A00031,led_B00031,Stage 1 exact match on order_ref + amount + date window.,identical amount 44846.25; settlement lag 0d
+1,GT-0032,CLEAN,pay_A00032,led_B00032,Stage 1 exact match on order_ref + amount + date window.,identical amount 25259.50; settlement lag 2d
+1,GT-0033,CLEAN,pay_A00033,led_B00033,Stage 1 exact match on order_ref + amount + date window.,identical amount 36506.99; settlement lag 0d
+1,GT-0034,CLEAN,pay_A00034,led_B00034,Stage 1 exact match on order_ref + amount + date window.,identical amount 35440.99; settlement lag 1d
+1,GT-0035,CLEAN,pay_A00035,led_B00035,Stage 1 exact match on order_ref + amount + date window.,identical amount 19484.25; settlement lag 1d
+1,GT-0036,CLEAN,pay_A00036,led_B00036,Stage 1 exact match on order_ref + amount + date window.,identical amount 47573.75; settlement lag 2d
+1,GT-0037,CLEAN,pay_A00037,led_B00037,Stage 1 exact match on order_ref + amount + date window.,identical amount 11958.50; settlement lag 1d
+1,GT-0038,CLEAN,pay_A00038,led_B00038,Stage 1 exact match on order_ref + amount + date window.,identical amount 42124.50; settlement lag 0d
+1,GT-0039,CLEAN,pay_A00039,led_B00039,Stage 1 exact match on order_ref + amount + date window.,identical amount 24754.99; settlement lag 2d
+1,GT-0040,CLEAN,pay_A00040,led_B00040,Stage 1 exact match on order_ref + amount + date window.,identical amount 35007.00; settlement lag 1d
+1,GT-0041,CLEAN,pay_A00041,led_B00041,Stage 1 exact match on order_ref + amount + date window.,identical amount 1526.00; settlement lag 1d
+1,GT-0042,CLEAN,pay_A00042,led_B00042,Stage 1 exact match on order_ref + amount + date window.,identical amount 4046.00; settlement lag 0d
+1,GT-0043,CLEAN,pay_A00043,led_B00043,Stage 1 exact match on order_ref + amount + date window.,identical amount 32099.99; settlement lag 2d
+1,GT-0044,CLEAN,pay_A00044,led_B00044,Stage 1 exact match on order_ref + amount + date window.,identical amount 8491.00; settlement lag 1d
+1,GT-0045,CLEAN,pay_A00045,led_B00045,Stage 1 exact match on order_ref + amount + date window.,identical amount 11071.00; settlement lag 2d
+1,GT-0046,CLEAN,pay_A00046,led_B00046,Stage 1 exact match on order_ref + amount + date window.,identical amount 14130.50; settlement lag 0d
+1,GT-0047,CLEAN,pay_A00047,led_B00047,Stage 1 exact match on order_ref + amount + date window.,identical amount 20678.25; settlement lag 1d
+1,GT-0048,CLEAN,pay_A00048,led_B00048,Stage 1 exact match on order_ref + amount + date window.,identical amount 34169.25; settlement lag 0d
+1,GT-0049,CLEAN,pay_A00049,led_B00049,Stage 1 exact match on order_ref + amount + date window.,identical amount 4446.00; settlement lag 2d
+1,GT-0050,CLEAN,pay_A00050,led_B00050,Stage 1 exact match on order_ref + amount + date window.,identical amount 15330.50; settlement lag 0d
+1,GT-0051,CLEAN,pay_A00051,led_B00051,Stage 1 exact match on order_ref + amount + date window.,identical amount 46639.75; settlement lag 0d
+1,GT-0052,CLEAN,pay_A00052,led_B00052,Stage 1 exact match on order_ref + amount + date window.,identical amount 2308.99; settlement lag 0d
+1,GT-0053,CLEAN,pay_A00053,led_B00053,Stage 1 exact match on order_ref + amount + date window.,identical amount 15847.00; settlement lag 1d
+1,GT-0054,CLEAN,pay_A00054,led_B00054,Stage 1 exact match on order_ref + amount + date window.,identical amount 35589.00; settlement lag 2d
+1,GT-0055,CLEAN,pay_A00055,led_B00055,Stage 1 exact match on order_ref + amount + date window.,identical amount 31226.00; settlement lag 1d
+1,GT-0056,DUP,"pay_A00056,pay_A00057",led_B00056,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 7469.00 for order_00056; ledger has a single row
+1,GT-0057,DUP,"pay_A00058,pay_A00059",led_B00057,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 11596.25 for order_00057; ledger has a single row
+1,GT-0058,DUP,"pay_A00060,pay_A00061",led_B00058,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 7535.25 for order_00058; ledger has a single row
+1,GT-0059,DUP,"pay_A00062,pay_A00063",led_B00059,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 1687.75 for order_00059; ledger has a single row
+1,GT-0060,SPLIT,"pay_A00064,pay_A00065",led_B00060,Sum-match the two A rows to the single B row; do not 1:1 match.,2089.60 + 3134.40 = 5224.00 on order_00060
+1,GT-0061,SPLIT,"pay_A00066,pay_A00067",led_B00061,Sum-match the two A rows to the single B row; do not 1:1 match.,6559.50 + 6559.49 = 13118.99 on order_00061
+1,GT-0062,SPLIT,"pay_A00068,pay_A00069",led_B00062,Sum-match the two A rows to the single B row; do not 1:1 match.,6595.55 + 3551.45 = 10147.00 on order_00062
+1,GT-0063,FX_ROUND,pay_A00070,led_B00063,Fuzzy/tolerant match within paise band; log the amount delta.,A=7750.01 B=7750.00 delta=0.01 (paise-level)
+1,GT-0064,FX_ROUND,pay_A00071,led_B00064,Fuzzy/tolerant match within paise band; log the amount delta.,A=7978.99 B=7979.00 delta=-0.01 (paise-level)
+1,GT-0065,FX_ROUND,pay_A00072,led_B00065,Fuzzy/tolerant match within paise band; log the amount delta.,A=13639.01 B=13638.99 delta=0.02 (paise-level)
+1,GT-0066,FX_ROUND,pay_A00073,led_B00066,Fuzzy/tolerant match within paise band; log the amount delta.,A=11084.47 B=11084.50 delta=-0.03 (paise-level)
+1,GT-0067,FX_ROUND,pay_A00074,led_B00067,Fuzzy/tolerant match within paise band; log the amount delta.,A=12747.04 B=12746.99 delta=0.05 (paise-level)
+1,GT-0068,FX_ROUND,pay_A00075,led_B00068,Fuzzy/tolerant match within paise band; log the amount delta.,A=8356.21 B=8356.25 delta=-0.04 (paise-level)
+1,GT-0069,FEE_NET,pay_A00076,led_B00069,Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.,vendor=CloudStack SaaS; fee=2.00%; A_net=3352.58 B_gross=3421.00 fee_amt=68.42
+1,GT-0070,FEE_NET,pay_A00077,led_B00070,Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.,vendor=CloudStack SaaS; fee=2.00%; A_net=1538.85 B_gross=1570.25 fee_amt=31.40
+1,GT-0071,FEE_NET,pay_A00078,led_B00071,Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.,vendor=Nimbus Hosting; fee=2.36%; A_net=16021.75 B_gross=16409.00 fee_amt=387.25
+1,GT-0072,FEE_NET,pay_A00079,led_B00072,Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.,vendor=Nimbus Hosting; fee=2.36%; A_net=23751.66 B_gross=24325.75 fee_amt=574.09
+1,GT-0073,TIME_LAG,pay_A00080,led_B00073,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 8573.00; settlement lag 9d (outside 2-3d window)
+1,GT-0074,TIME_LAG,pay_A00081,led_B00074,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 4166.00; settlement lag 10d (outside 2-3d window)
+1,GT-0075,TIME_LAG,pay_A00082,led_B00075,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 5738.00; settlement lag 9d (outside 2-3d window)
+1,GT-0076,PARTIAL,pay_A00083,led_B00076,Match against adjusted (net-of-refund) amount; do not treat as full match.,original=16823.50 refund=6729.40 A_net=10094.10 (40% refunded)
+1,GT-0077,PARTIAL,pay_A00084,led_B00077,Match against adjusted (net-of-refund) amount; do not treat as full match.,original=17840.00 refund=3568.00 A_net=14272.00 (20% refunded)
+1,GT-0078,PARTIAL,pay_A00085,led_B00078,Match against adjusted (net-of-refund) amount; do not treat as full match.,original=3426.75 refund=685.35 A_net=2741.40 (20% refunded)
+1,GT-0079,OOP,pay_A00086,led_B00079,"Flag out-of-period: ledger in July, settlement in August cycle.",identical amount 5566.00; posting=2026-07-28 settlement=2026-08-02 (adjacent months)
+1,GT-0080,OOP,pay_A00087,led_B00080,"Flag out-of-period: ledger in July, settlement in August cycle.",identical amount 5770.00; posting=2026-07-29 settlement=2026-08-03 (adjacent months)
+1,GT-0081,UNRESOLVED,pay_A00088,,Stay UNRESOLVED. No plausible candidate. Do not force-match.,orphan settlement pay_A00088 635.25 — no source_b row exists
+1,GT-0082,UNRESOLVED,,led_B00081,Stay UNRESOLVED. No plausible candidate. Do not force-match.,orphan ledger led_B00081 2615.50 — no source_a row exists
+2,GT-20001,CLEAN,pay_2A00001,led_2B00001,Stage 1 exact match on order_ref + amount + date window.,identical amount 34323.99; settlement lag 0d
+2,GT-20002,CLEAN,pay_2A00002,led_2B00002,Stage 1 exact match on order_ref + amount + date window.,identical amount 28515.00; settlement lag 1d
+2,GT-20003,CLEAN,pay_2A00003,led_2B00003,Stage 1 exact match on order_ref + amount + date window.,identical amount 20822.75; settlement lag 0d
+2,GT-20004,CLEAN,pay_2A00004,led_2B00004,Stage 1 exact match on order_ref + amount + date window.,identical amount 19931.50; settlement lag 1d
+2,GT-20005,CLEAN,pay_2A00005,led_2B00005,Stage 1 exact match on order_ref + amount + date window.,identical amount 26621.75; settlement lag 2d
+2,GT-20006,CLEAN,pay_2A00006,led_2B00006,Stage 1 exact match on order_ref + amount + date window.,identical amount 12822.25; settlement lag 1d
+2,GT-20007,CLEAN,pay_2A00007,led_2B00007,Stage 1 exact match on order_ref + amount + date window.,identical amount 11655.50; settlement lag 1d
+2,GT-20008,CLEAN,pay_2A00008,led_2B00008,Stage 1 exact match on order_ref + amount + date window.,identical amount 36159.99; settlement lag 1d
+2,GT-20009,CLEAN,pay_2A00009,led_2B00009,Stage 1 exact match on order_ref + amount + date window.,identical amount 14024.25; settlement lag 2d
+2,GT-20010,CLEAN,pay_2A00010,led_2B00010,Stage 1 exact match on order_ref + amount + date window.,identical amount 43156.00; settlement lag 1d
+2,GT-20011,CLEAN,pay_2A00011,led_2B00011,Stage 1 exact match on order_ref + amount + date window.,identical amount 44527.00; settlement lag 1d
+2,GT-20012,CLEAN,pay_2A00012,led_2B00012,Stage 1 exact match on order_ref + amount + date window.,identical amount 11370.75; settlement lag 1d
+2,GT-20013,CLEAN,pay_2A00013,led_2B00013,Stage 1 exact match on order_ref + amount + date window.,identical amount 43756.75; settlement lag 1d
+2,GT-20014,CLEAN,pay_2A00014,led_2B00014,Stage 1 exact match on order_ref + amount + date window.,identical amount 15642.75; settlement lag 0d
+2,GT-20015,CLEAN,pay_2A00015,led_2B00015,Stage 1 exact match on order_ref + amount + date window.,identical amount 13300.00; settlement lag 0d
+2,GT-20016,CLEAN,pay_2A00016,led_2B00016,Stage 1 exact match on order_ref + amount + date window.,identical amount 31388.50; settlement lag 0d
+2,GT-20017,CLEAN,pay_2A00017,led_2B00017,Stage 1 exact match on order_ref + amount + date window.,identical amount 27410.75; settlement lag 0d
+2,GT-20018,CLEAN,pay_2A00018,led_2B00018,Stage 1 exact match on order_ref + amount + date window.,identical amount 45886.25; settlement lag 1d
+2,GT-20019,CLEAN,pay_2A00019,led_2B00019,Stage 1 exact match on order_ref + amount + date window.,identical amount 9921.75; settlement lag 0d
+2,GT-20020,CLEAN,pay_2A00020,led_2B00020,Stage 1 exact match on order_ref + amount + date window.,identical amount 7235.99; settlement lag 0d
+2,GT-20021,CLEAN,pay_2A00021,led_2B00021,Stage 1 exact match on order_ref + amount + date window.,identical amount 45857.50; settlement lag 0d
+2,GT-20022,CLEAN,pay_2A00022,led_2B00022,Stage 1 exact match on order_ref + amount + date window.,identical amount 16581.99; settlement lag 1d
+2,GT-20023,CLEAN,pay_2A00023,led_2B00023,Stage 1 exact match on order_ref + amount + date window.,identical amount 30700.75; settlement lag 2d
+2,GT-20024,CLEAN,pay_2A00024,led_2B00024,Stage 1 exact match on order_ref + amount + date window.,identical amount 21044.99; settlement lag 2d
+2,GT-20025,CLEAN,pay_2A00025,led_2B00025,Stage 1 exact match on order_ref + amount + date window.,identical amount 47388.50; settlement lag 2d
+2,GT-20026,CLEAN,pay_2A00026,led_2B00026,Stage 1 exact match on order_ref + amount + date window.,identical amount 10680.75; settlement lag 1d
+2,GT-20027,CLEAN,pay_2A00027,led_2B00027,Stage 1 exact match on order_ref + amount + date window.,identical amount 17236.99; settlement lag 1d
+2,GT-20028,CLEAN,pay_2A00028,led_2B00028,Stage 1 exact match on order_ref + amount + date window.,identical amount 34413.25; settlement lag 0d
+2,GT-20029,CLEAN,pay_2A00029,led_2B00029,Stage 1 exact match on order_ref + amount + date window.,identical amount 29077.00; settlement lag 1d
+2,GT-20030,CLEAN,pay_2A00030,led_2B00030,Stage 1 exact match on order_ref + amount + date window.,identical amount 18057.00; settlement lag 2d
+2,GT-20031,CLEAN,pay_2A00031,led_2B00031,Stage 1 exact match on order_ref + amount + date window.,identical amount 9318.00; settlement lag 1d
+2,GT-20032,CLEAN,pay_2A00032,led_2B00032,Stage 1 exact match on order_ref + amount + date window.,identical amount 10264.75; settlement lag 0d
+2,GT-20033,CLEAN,pay_2A00033,led_2B00033,Stage 1 exact match on order_ref + amount + date window.,identical amount 26962.00; settlement lag 1d
+2,GT-20034,CLEAN,pay_2A00034,led_2B00034,Stage 1 exact match on order_ref + amount + date window.,identical amount 4330.00; settlement lag 1d
+2,GT-20035,CLEAN,pay_2A00035,led_2B00035,Stage 1 exact match on order_ref + amount + date window.,identical amount 38528.75; settlement lag 2d
+2,GT-20036,CLEAN,pay_2A00036,led_2B00036,Stage 1 exact match on order_ref + amount + date window.,identical amount 31509.00; settlement lag 1d
+2,GT-20037,CLEAN,pay_2A00037,led_2B00037,Stage 1 exact match on order_ref + amount + date window.,identical amount 25808.99; settlement lag 1d
+2,GT-20038,CLEAN,pay_2A00038,led_2B00038,Stage 1 exact match on order_ref + amount + date window.,identical amount 36041.99; settlement lag 0d
+2,GT-20039,CLEAN,pay_2A00039,led_2B00039,Stage 1 exact match on order_ref + amount + date window.,identical amount 14630.00; settlement lag 1d
+2,GT-20040,CLEAN,pay_2A00040,led_2B00040,Stage 1 exact match on order_ref + amount + date window.,identical amount 25734.00; settlement lag 1d
+2,GT-20041,CLEAN,pay_2A00041,led_2B00041,Stage 1 exact match on order_ref + amount + date window.,identical amount 11066.99; settlement lag 0d
+2,GT-20042,CLEAN,pay_2A00042,led_2B00042,Stage 1 exact match on order_ref + amount + date window.,identical amount 35254.00; settlement lag 2d
+2,GT-20043,CLEAN,pay_2A00043,led_2B00043,Stage 1 exact match on order_ref + amount + date window.,identical amount 43700.00; settlement lag 1d
+2,GT-20044,CLEAN,pay_2A00044,led_2B00044,Stage 1 exact match on order_ref + amount + date window.,identical amount 30507.00; settlement lag 1d
+2,GT-20045,CLEAN,pay_2A00045,led_2B00045,Stage 1 exact match on order_ref + amount + date window.,identical amount 21703.00; settlement lag 1d
+2,GT-20046,CLEAN,pay_2A00046,led_2B00046,Stage 1 exact match on order_ref + amount + date window.,identical amount 25096.00; settlement lag 1d
+2,GT-20047,CLEAN,pay_2A00047,led_2B00047,Stage 1 exact match on order_ref + amount + date window.,identical amount 5617.25; settlement lag 2d
+2,GT-20048,CLEAN,pay_2A00048,led_2B00048,Stage 1 exact match on order_ref + amount + date window.,identical amount 23185.00; settlement lag 0d
+2,GT-20049,CLEAN,pay_2A00049,led_2B00049,Stage 1 exact match on order_ref + amount + date window.,identical amount 42963.00; settlement lag 0d
+2,GT-20050,CLEAN,pay_2A00050,led_2B00050,Stage 1 exact match on order_ref + amount + date window.,identical amount 13315.99; settlement lag 2d
+2,GT-20051,CLEAN,pay_2A00051,led_2B00051,Stage 1 exact match on order_ref + amount + date window.,identical amount 15883.00; settlement lag 0d
+2,GT-20052,CLEAN,pay_2A00052,led_2B00052,Stage 1 exact match on order_ref + amount + date window.,identical amount 14534.25; settlement lag 1d
+2,GT-20053,CLEAN,pay_2A00053,led_2B00053,Stage 1 exact match on order_ref + amount + date window.,identical amount 24425.00; settlement lag 2d
+2,GT-20054,CLEAN,pay_2A00054,led_2B00054,Stage 1 exact match on order_ref + amount + date window.,identical amount 47328.00; settlement lag 0d
+2,GT-20055,CLEAN,pay_2A00055,led_2B00055,Stage 1 exact match on order_ref + amount + date window.,identical amount 7334.50; settlement lag 1d
+2,GT-20056,DUP,"pay_2A00056,pay_2A00057",led_2B00056,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 11897.25 for order_200056; ledger has a single row
+2,GT-20057,DUP,"pay_2A00058,pay_2A00059",led_2B00057,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 4049.00 for order_200057; ledger has a single row
+2,GT-20058,DUP,"pay_2A00060,pay_2A00061",led_2B00058,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 11076.00 for order_200058; ledger has a single row
+2,GT-20059,DUP,"pay_2A00062,pay_2A00063",led_2B00059,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 5741.99 for order_200059; ledger has a single row
+2,GT-20060,SPLIT,"pay_2A00064,pay_2A00065",led_2B00060,Sum-match the two A rows to the single B row; do not 1:1 match.,2386.80 + 3580.19 = 5966.99 on order_200060
+2,GT-20061,SPLIT,"pay_2A00066,pay_2A00067",led_2B00061,Sum-match the two A rows to the single B row; do not 1:1 match.,1672.50 + 1672.50 = 3345.00 on order_200061
+2,GT-20062,SPLIT,"pay_2A00068,pay_2A00069",led_2B00062,Sum-match the two A rows to the single B row; do not 1:1 match.,9192.30 + 4949.70 = 14142.00 on order_200062
+2,GT-20063,FX_ROUND,pay_2A00070,led_2B00063,Fuzzy/tolerant match within paise band; log the amount delta.,A=5990.01 B=5990.00 delta=0.01 (paise-level)
+2,GT-20064,FX_ROUND,pay_2A00071,led_2B00064,Fuzzy/tolerant match within paise band; log the amount delta.,A=8430.99 B=8431.00 delta=-0.01 (paise-level)
+2,GT-20065,FX_ROUND,pay_2A00072,led_2B00065,Fuzzy/tolerant match within paise band; log the amount delta.,A=13977.27 B=13977.25 delta=0.02 (paise-level)
+2,GT-20066,FX_ROUND,pay_2A00073,led_2B00066,Fuzzy/tolerant match within paise band; log the amount delta.,A=3285.72 B=3285.75 delta=-0.03 (paise-level)
+2,GT-20067,FX_ROUND,pay_2A00074,led_2B00067,Fuzzy/tolerant match within paise band; log the amount delta.,A=13641.55 B=13641.50 delta=0.05 (paise-level)
+2,GT-20068,FX_ROUND,pay_2A00075,led_2B00068,Fuzzy/tolerant match within paise band; log the amount delta.,A=7536.95 B=7536.99 delta=-0.04 (paise-level)
+2,GT-20069,FEE_NET,pay_2A00076,led_2B00069,Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.,vendor=CloudStack SaaS; fee=2.00%; A_net=11820.75 B_gross=12061.99 fee_amt=241.24
+2,GT-20070,FEE_NET,pay_2A00077,led_2B00070,Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.,vendor=CloudStack SaaS; fee=2.00%; A_net=4252.22 B_gross=4339.00 fee_amt=86.78
+2,GT-20071,FEE_NET,pay_2A00078,led_2B00071,Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.,vendor=Nimbus Hosting; fee=2.36%; A_net=9267.00 B_gross=9490.99 fee_amt=223.99
+2,GT-20072,FEE_NET,pay_2A00079,led_2B00072,Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.,vendor=Nimbus Hosting; fee=2.36%; A_net=19696.43 B_gross=20172.50 fee_amt=476.07
+2,GT-20073,TIME_LAG,pay_2A00080,led_2B00073,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 6111.00; settlement lag 9d (outside 2-3d window)
+2,GT-20074,TIME_LAG,pay_2A00081,led_2B00074,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 5925.00; settlement lag 10d (outside 2-3d window)
+2,GT-20075,TIME_LAG,pay_2A00082,led_2B00075,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 6413.99; settlement lag 9d (outside 2-3d window)
+2,GT-20076,PARTIAL,pay_2A00083,led_2B00076,Match against adjusted (net-of-refund) amount; do not treat as full match.,original=10363.50 refund=4145.40 A_net=6218.10 (40% refunded)
+2,GT-20077,PARTIAL,pay_2A00084,led_2B00077,Match against adjusted (net-of-refund) amount; do not treat as full match.,original=1532.50 refund=306.50 A_net=1226.00 (20% refunded)
+2,GT-20078,PARTIAL,pay_2A00085,led_2B00078,Match against adjusted (net-of-refund) amount; do not treat as full match.,original=14517.25 refund=5806.90 A_net=8710.35 (40% refunded)
+2,GT-20079,OOP,pay_2A00086,led_2B00079,"Flag out-of-period: ledger in July, settlement in August cycle.",identical amount 6557.25; posting=2026-07-28 settlement=2026-08-02 (adjacent months)
+2,GT-20080,OOP,pay_2A00087,led_2B00080,"Flag out-of-period: ledger in July, settlement in August cycle.",identical amount 6731.25; posting=2026-07-29 settlement=2026-08-03 (adjacent months)
+2,GT-20081,UNRESOLVED,pay_2A00088,,Stay UNRESOLVED. No plausible candidate. Do not force-match.,orphan settlement pay_2A00088 3547.00 — no source_b row exists
+2,GT-20082,UNRESOLVED,,led_2B00081,Stay UNRESOLVED. No plausible candidate. Do not force-match.,orphan ledger led_2B00081 1207.25 — no source_a row exists
+3,GT-30001,CLEAN,pay_3A00001,led_3B00001,Stage 1 exact match on order_ref + amount + date window.,identical amount 18479.00; settlement lag 1d
+3,GT-30002,CLEAN,pay_3A00002,led_3B00002,Stage 1 exact match on order_ref + amount + date window.,identical amount 32475.00; settlement lag 1d
+3,GT-30003,CLEAN,pay_3A00003,led_3B00003,Stage 1 exact match on order_ref + amount + date window.,identical amount 22093.00; settlement lag 0d
+3,GT-30004,CLEAN,pay_3A00004,led_3B00004,Stage 1 exact match on order_ref + amount + date window.,identical amount 10789.00; settlement lag 1d
+3,GT-30005,CLEAN,pay_3A00005,led_3B00005,Stage 1 exact match on order_ref + amount + date window.,identical amount 43673.25; settlement lag 2d
+3,GT-30006,CLEAN,pay_3A00006,led_3B00006,Stage 1 exact match on order_ref + amount + date window.,identical amount 30057.00; settlement lag 1d
+3,GT-30007,CLEAN,pay_3A00007,led_3B00007,Stage 1 exact match on order_ref + amount + date window.,identical amount 7847.99; settlement lag 2d
+3,GT-30008,CLEAN,pay_3A00008,led_3B00008,Stage 1 exact match on order_ref + amount + date window.,identical amount 325.75; settlement lag 2d
+3,GT-30009,CLEAN,pay_3A00009,led_3B00009,Stage 1 exact match on order_ref + amount + date window.,identical amount 27332.00; settlement lag 2d
+3,GT-30010,CLEAN,pay_3A00010,led_3B00010,Stage 1 exact match on order_ref + amount + date window.,identical amount 41054.99; settlement lag 1d
+3,GT-30011,CLEAN,pay_3A00011,led_3B00011,Stage 1 exact match on order_ref + amount + date window.,identical amount 3632.00; settlement lag 2d
+3,GT-30012,CLEAN,pay_3A00012,led_3B00012,Stage 1 exact match on order_ref + amount + date window.,identical amount 19126.25; settlement lag 1d
+3,GT-30013,CLEAN,pay_3A00013,led_3B00013,Stage 1 exact match on order_ref + amount + date window.,identical amount 2141.75; settlement lag 0d
+3,GT-30014,CLEAN,pay_3A00014,led_3B00014,Stage 1 exact match on order_ref + amount + date window.,identical amount 10629.00; settlement lag 0d
+3,GT-30015,CLEAN,pay_3A00015,led_3B00015,Stage 1 exact match on order_ref + amount + date window.,identical amount 26988.00; settlement lag 0d
+3,GT-30016,CLEAN,pay_3A00016,led_3B00016,Stage 1 exact match on order_ref + amount + date window.,identical amount 7948.75; settlement lag 0d
+3,GT-30017,CLEAN,pay_3A00017,led_3B00017,Stage 1 exact match on order_ref + amount + date window.,identical amount 47213.00; settlement lag 1d
+3,GT-30018,CLEAN,pay_3A00018,led_3B00018,Stage 1 exact match on order_ref + amount + date window.,identical amount 31871.25; settlement lag 1d
+3,GT-30019,CLEAN,pay_3A00019,led_3B00019,Stage 1 exact match on order_ref + amount + date window.,identical amount 9729.25; settlement lag 2d
+3,GT-30020,CLEAN,pay_3A00020,led_3B00020,Stage 1 exact match on order_ref + amount + date window.,identical amount 9196.99; settlement lag 1d
+3,GT-30021,CLEAN,pay_3A00021,led_3B00021,Stage 1 exact match on order_ref + amount + date window.,identical amount 27443.00; settlement lag 2d
+3,GT-30022,CLEAN,pay_3A00022,led_3B00022,Stage 1 exact match on order_ref + amount + date window.,identical amount 418.00; settlement lag 1d
+3,GT-30023,CLEAN,pay_3A00023,led_3B00023,Stage 1 exact match on order_ref + amount + date window.,identical amount 38715.50; settlement lag 1d
+3,GT-30024,CLEAN,pay_3A00024,led_3B00024,Stage 1 exact match on order_ref + amount + date window.,identical amount 9988.25; settlement lag 1d
+3,GT-30025,CLEAN,pay_3A00025,led_3B00025,Stage 1 exact match on order_ref + amount + date window.,identical amount 22036.50; settlement lag 2d
+3,GT-30026,CLEAN,pay_3A00026,led_3B00026,Stage 1 exact match on order_ref + amount + date window.,identical amount 30091.00; settlement lag 0d
+3,GT-30027,CLEAN,pay_3A00027,led_3B00027,Stage 1 exact match on order_ref + amount + date window.,identical amount 15900.50; settlement lag 0d
+3,GT-30028,CLEAN,pay_3A00028,led_3B00028,Stage 1 exact match on order_ref + amount + date window.,identical amount 27170.00; settlement lag 1d
+3,GT-30029,CLEAN,pay_3A00029,led_3B00029,Stage 1 exact match on order_ref + amount + date window.,identical amount 25234.25; settlement lag 0d
+3,GT-30030,CLEAN,pay_3A00030,led_3B00030,Stage 1 exact match on order_ref + amount + date window.,identical amount 2676.00; settlement lag 2d
+3,GT-30031,CLEAN,pay_3A00031,led_3B00031,Stage 1 exact match on order_ref + amount + date window.,identical amount 6827.99; settlement lag 1d
+3,GT-30032,CLEAN,pay_3A00032,led_3B00032,Stage 1 exact match on order_ref + amount + date window.,identical amount 34718.25; settlement lag 0d
+3,GT-30033,CLEAN,pay_3A00033,led_3B00033,Stage 1 exact match on order_ref + amount + date window.,identical amount 43161.00; settlement lag 1d
+3,GT-30034,CLEAN,pay_3A00034,led_3B00034,Stage 1 exact match on order_ref + amount + date window.,identical amount 17618.00; settlement lag 1d
+3,GT-30035,CLEAN,pay_3A00035,led_3B00035,Stage 1 exact match on order_ref + amount + date window.,identical amount 5513.99; settlement lag 2d
+3,GT-30036,CLEAN,pay_3A00036,led_3B00036,Stage 1 exact match on order_ref + amount + date window.,identical amount 21002.75; settlement lag 1d
+3,GT-30037,CLEAN,pay_3A00037,led_3B00037,Stage 1 exact match on order_ref + amount + date window.,identical amount 35706.00; settlement lag 0d
+3,GT-30038,CLEAN,pay_3A00038,led_3B00038,Stage 1 exact match on order_ref + amount + date window.,identical amount 41613.75; settlement lag 0d
+3,GT-30039,CLEAN,pay_3A00039,led_3B00039,Stage 1 exact match on order_ref + amount + date window.,identical amount 6173.25; settlement lag 0d
+3,GT-30040,CLEAN,pay_3A00040,led_3B00040,Stage 1 exact match on order_ref + amount + date window.,identical amount 11152.75; settlement lag 0d
+3,GT-30041,CLEAN,pay_3A00041,led_3B00041,Stage 1 exact match on order_ref + amount + date window.,identical amount 21508.99; settlement lag 1d
+3,GT-30042,CLEAN,pay_3A00042,led_3B00042,Stage 1 exact match on order_ref + amount + date window.,identical amount 24815.25; settlement lag 0d
+3,GT-30043,CLEAN,pay_3A00043,led_3B00043,Stage 1 exact match on order_ref + amount + date window.,identical amount 27254.50; settlement lag 0d
+3,GT-30044,CLEAN,pay_3A00044,led_3B00044,Stage 1 exact match on order_ref + amount + date window.,identical amount 11723.00; settlement lag 1d
+3,GT-30045,CLEAN,pay_3A00045,led_3B00045,Stage 1 exact match on order_ref + amount + date window.,identical amount 45019.00; settlement lag 2d
+3,GT-30046,CLEAN,pay_3A00046,led_3B00046,Stage 1 exact match on order_ref + amount + date window.,identical amount 15466.25; settlement lag 1d
+3,GT-30047,CLEAN,pay_3A00047,led_3B00047,Stage 1 exact match on order_ref + amount + date window.,identical amount 16983.75; settlement lag 1d
+3,GT-30048,CLEAN,pay_3A00048,led_3B00048,Stage 1 exact match on order_ref + amount + date window.,identical amount 19100.75; settlement lag 0d
+3,GT-30049,CLEAN,pay_3A00049,led_3B00049,Stage 1 exact match on order_ref + amount + date window.,identical amount 29199.00; settlement lag 1d
+3,GT-30050,CLEAN,pay_3A00050,led_3B00050,Stage 1 exact match on order_ref + amount + date window.,identical amount 28057.75; settlement lag 1d
+3,GT-30051,CLEAN,pay_3A00051,led_3B00051,Stage 1 exact match on order_ref + amount + date window.,identical amount 20049.00; settlement lag 1d
+3,GT-30052,CLEAN,pay_3A00052,led_3B00052,Stage 1 exact match on order_ref + amount + date window.,identical amount 15795.25; settlement lag 1d
+3,GT-30053,CLEAN,pay_3A00053,led_3B00053,Stage 1 exact match on order_ref + amount + date window.,identical amount 19640.75; settlement lag 0d
+3,GT-30054,CLEAN,pay_3A00054,led_3B00054,Stage 1 exact match on order_ref + amount + date window.,identical amount 43387.25; settlement lag 0d
+3,GT-30055,CLEAN,pay_3A00055,led_3B00055,Stage 1 exact match on order_ref + amount + date window.,identical amount 45194.99; settlement lag 0d
+3,GT-30056,DUP,"pay_3A00056,pay_3A00057",led_3B00056,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 10735.75 for order_300056; ledger has a single row
+3,GT-30057,DUP,"pay_3A00058,pay_3A00059",led_3B00057,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 5489.99 for order_300057; ledger has a single row
+3,GT-30058,DUP,"pay_3A00060,pay_3A00061",led_3B00058,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 10746.99 for order_300058; ledger has a single row
+3,GT-30059,DUP,"pay_3A00062,pay_3A00063",led_3B00059,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 11230.00 for order_300059; ledger has a single row
+3,GT-30060,SPLIT,"pay_3A00064,pay_3A00065",led_3B00060,Sum-match the two A rows to the single B row; do not 1:1 match.,2592.70 + 3889.05 = 6481.75 on order_300060
+3,GT-30061,SPLIT,"pay_3A00066,pay_3A00067",led_3B00061,Sum-match the two A rows to the single B row; do not 1:1 match.,1645.50 + 1645.50 = 3291.00 on order_300061
+3,GT-30062,SPLIT,"pay_3A00068,pay_3A00069",led_3B00062,Sum-match the two A rows to the single B row; do not 1:1 match.,2010.78 + 1082.72 = 3093.50 on order_300062
+3,GT-30063,FX_ROUND,pay_3A00070,led_3B00063,Fuzzy/tolerant match within paise band; log the amount delta.,A=2553.01 B=2553.00 delta=0.01 (paise-level)
+3,GT-30064,FX_ROUND,pay_3A00071,led_3B00064,Fuzzy/tolerant match within paise band; log the amount delta.,A=7206.99 B=7207.00 delta=-0.01 (paise-level)
+3,GT-30065,FX_ROUND,pay_3A00072,led_3B00065,Fuzzy/tolerant match within paise band; log the amount delta.,A=9237.02 B=9237.00 delta=0.02 (paise-level)
+3,GT-30066,FX_ROUND,pay_3A00073,led_3B00066,Fuzzy/tolerant match within paise band; log the amount delta.,A=3094.97 B=3095.00 delta=-0.03 (paise-level)
+3,GT-30067,FX_ROUND,pay_3A00074,led_3B00067,Fuzzy/tolerant match within paise band; log the amount delta.,A=5235.80 B=5235.75 delta=0.05 (paise-level)
+3,GT-30068,FX_ROUND,pay_3A00075,led_3B00068,Fuzzy/tolerant match within paise band; log the amount delta.,A=2286.21 B=2286.25 delta=-0.04 (paise-level)
+3,GT-30069,FEE_NET,pay_3A00076,led_3B00069,Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.,vendor=CloudStack SaaS; fee=2.00%; A_net=8715.13 B_gross=8892.99 fee_amt=177.86
+3,GT-30070,FEE_NET,pay_3A00077,led_3B00070,Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.,vendor=CloudStack SaaS; fee=2.00%; A_net=23126.29 B_gross=23598.25 fee_amt=471.96
+3,GT-30071,FEE_NET,pay_3A00078,led_3B00071,Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.,vendor=Nimbus Hosting; fee=2.36%; A_net=19295.62 B_gross=19762.00 fee_amt=466.38
+3,GT-30072,FEE_NET,pay_3A00079,led_3B00072,Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.,vendor=Nimbus Hosting; fee=2.36%; A_net=14088.48 B_gross=14429.00 fee_amt=340.52
+3,GT-30073,TIME_LAG,pay_3A00080,led_3B00073,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 2624.25; settlement lag 9d (outside 2-3d window)
+3,GT-30074,TIME_LAG,pay_3A00081,led_3B00074,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 4895.50; settlement lag 10d (outside 2-3d window)
+3,GT-30075,TIME_LAG,pay_3A00082,led_3B00075,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 6686.00; settlement lag 9d (outside 2-3d window)
+3,GT-30076,PARTIAL,pay_3A00083,led_3B00076,Match against adjusted (net-of-refund) amount; do not treat as full match.,original=2020.50 refund=808.20 A_net=1212.30 (40% refunded)
+3,GT-30077,PARTIAL,pay_3A00084,led_3B00077,Match against adjusted (net-of-refund) amount; do not treat as full match.,original=8453.75 refund=1690.75 A_net=6763.00 (20% refunded)
+3,GT-30078,PARTIAL,pay_3A00085,led_3B00078,Match against adjusted (net-of-refund) amount; do not treat as full match.,original=16413.75 refund=4103.44 A_net=12310.31 (25% refunded)
+3,GT-30079,OOP,pay_3A00086,led_3B00079,"Flag out-of-period: ledger in July, settlement in August cycle.",identical amount 1855.00; posting=2026-07-28 settlement=2026-08-02 (adjacent months)
+3,GT-30080,OOP,pay_3A00087,led_3B00080,"Flag out-of-period: ledger in July, settlement in August cycle.",identical amount 1204.00; posting=2026-07-29 settlement=2026-08-03 (adjacent months)
+3,GT-30081,UNRESOLVED,pay_3A00088,,Stay UNRESOLVED. No plausible candidate. Do not force-match.,orphan settlement pay_3A00088 775.00 — no source_b row exists
+3,GT-30082,UNRESOLVED,,led_3B00081,Stay UNRESOLVED. No plausible candidate. Do not force-match.,orphan ledger led_3B00081 2501.00 — no source_a row exists
+10,GT-E0001,CLEAN,pay_EA00001,led_EB00001,Stage 1 exact match on order_ref + amount + date window.,identical amount 47505.00; settlement lag 2d
+10,GT-E0002,CLEAN,pay_EA00002,led_EB00002,Stage 1 exact match on order_ref + amount + date window.,identical amount 23295.00; settlement lag 2d
+10,GT-E0003,CLEAN,pay_EA00003,led_EB00003,Stage 1 exact match on order_ref + amount + date window.,identical amount 10390.75; settlement lag 0d
+10,GT-E0004,CLEAN,pay_EA00004,led_EB00004,Stage 1 exact match on order_ref + amount + date window.,identical amount 7342.00; settlement lag 1d
+10,GT-E0005,CLEAN,pay_EA00005,led_EB00005,Stage 1 exact match on order_ref + amount + date window.,identical amount 18506.50; settlement lag 1d
+10,GT-E0006,CLEAN,pay_EA00006,led_EB00006,Stage 1 exact match on order_ref + amount + date window.,identical amount 37013.99; settlement lag 2d
+10,GT-E0007,CLEAN,pay_EA00007,led_EB00007,Stage 1 exact match on order_ref + amount + date window.,identical amount 42369.50; settlement lag 2d
+10,GT-E0008,CLEAN,pay_EA00008,led_EB00008,Stage 1 exact match on order_ref + amount + date window.,identical amount 43361.99; settlement lag 0d
+10,GT-E0009,CLEAN,pay_EA00009,led_EB00009,Stage 1 exact match on order_ref + amount + date window.,identical amount 18159.75; settlement lag 1d
+10,GT-E0010,CLEAN,pay_EA00010,led_EB00010,Stage 1 exact match on order_ref + amount + date window.,identical amount 650.00; settlement lag 2d
+10,GT-E0011,CLEAN,pay_EA00011,led_EB00011,Stage 1 exact match on order_ref + amount + date window.,identical amount 26515.00; settlement lag 0d
+10,GT-E0012,CLEAN,pay_EA00012,led_EB00012,Stage 1 exact match on order_ref + amount + date window.,identical amount 35015.00; settlement lag 1d
+10,GT-E0013,CLEAN,pay_EA00013,led_EB00013,Stage 1 exact match on order_ref + amount + date window.,identical amount 22590.00; settlement lag 1d
+10,GT-E0014,CLEAN,pay_EA00014,led_EB00014,Stage 1 exact match on order_ref + amount + date window.,identical amount 21508.99; settlement lag 2d
+10,GT-E0015,CLEAN,pay_EA00015,led_EB00015,Stage 1 exact match on order_ref + amount + date window.,identical amount 3697.00; settlement lag 2d
+10,GT-E0016,CLEAN,pay_EA00016,led_EB00016,Stage 1 exact match on order_ref + amount + date window.,identical amount 44419.00; settlement lag 1d
+10,GT-E0017,CLEAN,pay_EA00017,led_EB00017,Stage 1 exact match on order_ref + amount + date window.,identical amount 28038.25; settlement lag 1d
+10,GT-E0018,CLEAN,pay_EA00018,led_EB00018,Stage 1 exact match on order_ref + amount + date window.,identical amount 18152.00; settlement lag 0d
+10,GT-E0019,CLEAN,pay_EA00019,led_EB00019,Stage 1 exact match on order_ref + amount + date window.,identical amount 28424.00; settlement lag 2d
+10,GT-E0020,CLEAN,pay_EA00020,led_EB00020,Stage 1 exact match on order_ref + amount + date window.,identical amount 34783.75; settlement lag 0d
+10,GT-E0021,CLEAN,pay_EA00021,led_EB00021,Stage 1 exact match on order_ref + amount + date window.,identical amount 26153.50; settlement lag 0d
+10,GT-E0022,CLEAN,pay_EA00022,led_EB00022,Stage 1 exact match on order_ref + amount + date window.,identical amount 20003.00; settlement lag 1d
+10,GT-E0023,CLEAN,pay_EA00023,led_EB00023,Stage 1 exact match on order_ref + amount + date window.,identical amount 21753.00; settlement lag 1d
+10,GT-E0024,CLEAN,pay_EA00024,led_EB00024,Stage 1 exact match on order_ref + amount + date window.,identical amount 28473.00; settlement lag 1d
+10,GT-E0025,CLEAN,pay_EA00025,led_EB00025,Stage 1 exact match on order_ref + amount + date window.,identical amount 46365.00; settlement lag 2d
+10,GT-E0026,CLEAN,pay_EA00026,led_EB00026,Stage 1 exact match on order_ref + amount + date window.,identical amount 44031.99; settlement lag 0d
+10,GT-E0027,CLEAN,pay_EA00027,led_EB00027,Stage 1 exact match on order_ref + amount + date window.,identical amount 3022.25; settlement lag 1d
+10,GT-E0028,CLEAN,pay_EA00028,led_EB00028,Stage 1 exact match on order_ref + amount + date window.,identical amount 5352.99; settlement lag 2d
+10,GT-E0029,CLEAN,pay_EA00029,led_EB00029,Stage 1 exact match on order_ref + amount + date window.,identical amount 37828.25; settlement lag 1d
+10,GT-E0030,CLEAN,pay_EA00030,led_EB00030,Stage 1 exact match on order_ref + amount + date window.,identical amount 26794.00; settlement lag 0d
+10,GT-E0031,CLEAN,pay_EA00031,led_EB00031,Stage 1 exact match on order_ref + amount + date window.,identical amount 40759.25; settlement lag 0d
+10,GT-E0032,CLEAN,pay_EA00032,led_EB00032,Stage 1 exact match on order_ref + amount + date window.,identical amount 7187.00; settlement lag 2d
+10,GT-E0033,CLEAN,pay_EA00033,led_EB00033,Stage 1 exact match on order_ref + amount + date window.,identical amount 34588.00; settlement lag 1d
+10,GT-E0034,CLEAN,pay_EA00034,led_EB00034,Stage 1 exact match on order_ref + amount + date window.,identical amount 22500.00; settlement lag 0d
+10,GT-E0035,CLEAN,pay_EA00035,led_EB00035,Stage 1 exact match on order_ref + amount + date window.,identical amount 33705.75; settlement lag 2d
+10,GT-E0036,CLEAN,pay_EA00036,led_EB00036,Stage 1 exact match on order_ref + amount + date window.,identical amount 12957.99; settlement lag 1d
+10,GT-E0037,CLEAN,pay_EA00037,led_EB00037,Stage 1 exact match on order_ref + amount + date window.,identical amount 42549.99; settlement lag 0d
+10,GT-E0038,CLEAN,pay_EA00038,led_EB00038,Stage 1 exact match on order_ref + amount + date window.,identical amount 9847.00; settlement lag 0d
+10,GT-E0039,CLEAN,pay_EA00039,led_EB00039,Stage 1 exact match on order_ref + amount + date window.,identical amount 10268.99; settlement lag 0d
+10,GT-E0040,CLEAN,pay_EA00040,led_EB00040,Stage 1 exact match on order_ref + amount + date window.,identical amount 41403.25; settlement lag 2d
+11,GT-V0001,CLEAN,pay_VA00001,led_VB00001,Stage 1 exact match on order_ref + amount + date window.,identical amount 43278.50; settlement lag 0d
+11,GT-V0002,CLEAN,pay_VA00002,led_VB00002,Stage 1 exact match on order_ref + amount + date window.,identical amount 5591.50; settlement lag 0d
+11,GT-V0003,CLEAN,pay_VA00003,led_VB00003,Stage 1 exact match on order_ref + amount + date window.,identical amount 23175.00; settlement lag 1d
+11,GT-V0004,CLEAN,pay_VA00004,led_VB00004,Stage 1 exact match on order_ref + amount + date window.,identical amount 39246.75; settlement lag 1d
+11,GT-V0005,CLEAN,pay_VA00005,led_VB00005,Stage 1 exact match on order_ref + amount + date window.,identical amount 24936.75; settlement lag 1d
+11,GT-V0006,CLEAN,pay_VA00006,led_VB00006,Stage 1 exact match on order_ref + amount + date window.,identical amount 8625.75; settlement lag 2d
+11,GT-V0007,CLEAN,pay_VA00007,led_VB00007,Stage 1 exact match on order_ref + amount + date window.,identical amount 42587.75; settlement lag 2d
+11,GT-V0008,CLEAN,pay_VA00008,led_VB00008,Stage 1 exact match on order_ref + amount + date window.,identical amount 1444.00; settlement lag 0d
+11,GT-V0009,CLEAN,pay_VA00009,led_VB00009,Stage 1 exact match on order_ref + amount + date window.,identical amount 22645.99; settlement lag 0d
+11,GT-V0010,CLEAN,pay_VA00010,led_VB00010,Stage 1 exact match on order_ref + amount + date window.,identical amount 9265.00; settlement lag 1d
+11,GT-V0011,CLEAN,pay_VA00011,led_VB00011,Stage 1 exact match on order_ref + amount + date window.,identical amount 6878.50; settlement lag 2d
+11,GT-V0012,CLEAN,pay_VA00012,led_VB00012,Stage 1 exact match on order_ref + amount + date window.,identical amount 34756.00; settlement lag 1d
+11,GT-V0013,CLEAN,pay_VA00013,led_VB00013,Stage 1 exact match on order_ref + amount + date window.,identical amount 40753.00; settlement lag 1d
+11,GT-V0014,CLEAN,pay_VA00014,led_VB00014,Stage 1 exact match on order_ref + amount + date window.,identical amount 10883.00; settlement lag 2d
+11,GT-V0015,CLEAN,pay_VA00015,led_VB00015,Stage 1 exact match on order_ref + amount + date window.,identical amount 11098.75; settlement lag 0d
+11,GT-V0016,CLEAN,pay_VA00016,led_VB00016,Stage 1 exact match on order_ref + amount + date window.,identical amount 24124.75; settlement lag 0d
+11,GT-V0017,CLEAN,pay_VA00017,led_VB00017,Stage 1 exact match on order_ref + amount + date window.,identical amount 40265.00; settlement lag 1d
+11,GT-V0018,CLEAN,pay_VA00018,led_VB00018,Stage 1 exact match on order_ref + amount + date window.,identical amount 35246.00; settlement lag 1d
+11,GT-V0019,CLEAN,pay_VA00019,led_VB00019,Stage 1 exact match on order_ref + amount + date window.,identical amount 12965.00; settlement lag 2d
+11,GT-V0020,CLEAN,pay_VA00020,led_VB00020,Stage 1 exact match on order_ref + amount + date window.,identical amount 30506.99; settlement lag 1d
+11,GT-V0021,DUP,"pay_VA00021,pay_VA00022",led_VB00021,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 9441.25 for order_V00021; ledger has a single row
+11,GT-V0022,DUP,"pay_VA00023,pay_VA00024",led_VB00022,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 4071.99 for order_V00022; ledger has a single row
+11,GT-V0023,DUP,"pay_VA00025,pay_VA00026",led_VB00023,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 4896.00 for order_V00023; ledger has a single row
+11,GT-V0024,DUP,"pay_VA00027,pay_VA00028",led_VB00024,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 6881.50 for order_V00024; ledger has a single row
+11,GT-V0025,DUP,"pay_VA00029,pay_VA00030",led_VB00025,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 9252.99 for order_V00025; ledger has a single row
+11,GT-V0026,DUP,"pay_VA00031,pay_VA00032",led_VB00026,"One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.",two identical settlements of 2174.99 for order_V00026; ledger has a single row
+11,GT-V0027,SPLIT,"pay_VA00033,pay_VA00034",led_VB00027,Sum-match the two A rows to the single B row; do not 1:1 match.,6689.40 + 10034.10 = 16723.50 on order_V00027
+11,GT-V0028,SPLIT,"pay_VA00035,pay_VA00036",led_VB00028,Sum-match the two A rows to the single B row; do not 1:1 match.,8167.50 + 8167.50 = 16335.00 on order_V00028
+11,GT-V0029,SPLIT,"pay_VA00037,pay_VA00038",led_VB00029,Sum-match the two A rows to the single B row; do not 1:1 match.,10908.30 + 5873.70 = 16782.00 on order_V00029
+11,GT-V0030,SPLIT,"pay_VA00039,pay_VA00040",led_VB00030,Sum-match the two A rows to the single B row; do not 1:1 match.,1498.10 + 2247.15 = 3745.25 on order_V00030
+11,GT-V0031,FX_ROUND,pay_VA00041,led_VB00031,Fuzzy/tolerant match within paise band; log the amount delta.,A=4262.26 B=4262.25 delta=0.01 (paise-level)
+11,GT-V0032,FX_ROUND,pay_VA00042,led_VB00032,Fuzzy/tolerant match within paise band; log the amount delta.,A=860.99 B=861.00 delta=-0.01 (paise-level)
+11,GT-V0033,FX_ROUND,pay_VA00043,led_VB00033,Fuzzy/tolerant match within paise band; log the amount delta.,A=2792.02 B=2792.00 delta=0.02 (paise-level)
+11,GT-V0034,FX_ROUND,pay_VA00044,led_VB00034,Fuzzy/tolerant match within paise band; log the amount delta.,A=13994.22 B=13994.25 delta=-0.03 (paise-level)
+11,GT-V0035,FX_ROUND,pay_VA00045,led_VB00035,Fuzzy/tolerant match within paise band; log the amount delta.,A=11959.30 B=11959.25 delta=0.05 (paise-level)
+11,GT-V0036,FX_ROUND,pay_VA00046,led_VB00036,Fuzzy/tolerant match within paise band; log the amount delta.,A=1697.96 B=1698.00 delta=-0.04 (paise-level)
+11,GT-V0037,FX_ROUND,pay_VA00047,led_VB00037,Fuzzy/tolerant match within paise band; log the amount delta.,A=2849.51 B=2849.50 delta=0.01 (paise-level)
+11,GT-V0038,FX_ROUND,pay_VA00048,led_VB00038,Fuzzy/tolerant match within paise band; log the amount delta.,A=13115.99 B=13116.00 delta=-0.01 (paise-level)
+11,GT-V0039,FEE_NET,pay_VA00049,led_VB00039,Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.,vendor=CloudStack SaaS; fee=2.00%; A_net=5382.16 B_gross=5492.00 fee_amt=109.84
+11,GT-V0040,FEE_NET,pay_VA00050,led_VB00040,Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.,vendor=CloudStack SaaS; fee=2.00%; A_net=14951.61 B_gross=15256.75 fee_amt=305.14
+11,GT-V0041,FEE_NET,pay_VA00051,led_VB00041,Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.,vendor=Nimbus Hosting; fee=2.36%; A_net=21391.22 B_gross=21908.25 fee_amt=517.03
+11,GT-V0042,FEE_NET,pay_VA00052,led_VB00042,Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.,vendor=Nimbus Hosting; fee=2.36%; A_net=5011.85 B_gross=5132.99 fee_amt=121.14
+11,GT-V0043,FEE_NET,pay_VA00053,led_VB00043,Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.,vendor=CloudStack SaaS; fee=2.00%; A_net=20632.43 B_gross=21053.50 fee_amt=421.07
+11,GT-V0044,TIME_LAG,pay_VA00054,led_VB00044,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 4563.75; settlement lag 9d (outside 2-3d window)
+11,GT-V0045,TIME_LAG,pay_VA00055,led_VB00045,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 7632.00; settlement lag 10d (outside 2-3d window)
+11,GT-V0046,TIME_LAG,pay_VA00056,led_VB00046,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 7425.00; settlement lag 9d (outside 2-3d window)
+11,GT-V0047,TIME_LAG,pay_VA00057,led_VB00047,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 6508.00; settlement lag 10d (outside 2-3d window)
+11,GT-V0048,PARTIAL,pay_VA00058,led_VB00048,Match against adjusted (net-of-refund) amount; do not treat as full match.,original=17824.99 refund=7130.00 A_net=10694.99 (40% refunded)
+11,GT-V0049,PARTIAL,pay_VA00059,led_VB00049,Match against adjusted (net-of-refund) amount; do not treat as full match.,original=13994.99 refund=3498.75 A_net=10496.24 (25% refunded)
+11,GT-V0050,PARTIAL,pay_VA00060,led_VB00050,Match against adjusted (net-of-refund) amount; do not treat as full match.,original=13877.00 refund=3469.25 A_net=10407.75 (25% refunded)
+11,GT-V0051,PARTIAL,pay_VA00061,led_VB00051,Match against adjusted (net-of-refund) amount; do not treat as full match.,original=12901.99 refund=2580.40 A_net=10321.59 (20% refunded)
+11,GT-V0052,OOP,pay_VA00062,led_VB00052,"Flag out-of-period: ledger in July, settlement in August cycle.",identical amount 6904.75; posting=2026-07-28 settlement=2026-08-02 (adjacent months)
+11,GT-V0053,OOP,pay_VA00063,led_VB00053,"Flag out-of-period: ledger in July, settlement in August cycle.",identical amount 1749.99; posting=2026-07-29 settlement=2026-08-03 (adjacent months)
+11,GT-V0054,OOP,pay_VA00064,led_VB00054,"Flag out-of-period: ledger in July, settlement in August cycle.",identical amount 6922.99; posting=2026-07-30 settlement=2026-08-04 (adjacent months)
+11,GT-V0055,UNRESOLVED,pay_VA00065,,Stay UNRESOLVED. No plausible candidate. Do not force-match.,orphan settlement pay_VA00065 846.00 — no source_b row exists
+11,GT-V0056,UNRESOLVED,,led_VB00055,Stay UNRESOLVED. No plausible candidate. Do not force-match.,orphan ledger led_VB00055 1686.99 — no source_a row exists
+12,GT-S0001,CLEAN,pay_SA00001,led_SB00001,Stage 1 exact match on order_ref + amount + date window.,identical amount 37059.00; settlement lag 1d
+12,GT-S0002,CLEAN,pay_SA00002,led_SB00002,Stage 1 exact match on order_ref + amount + date window.,identical amount 29496.00; settlement lag 1d
+12,GT-S0003,CLEAN,pay_SA00003,led_SB00003,Stage 1 exact match on order_ref + amount + date window.,identical amount 32441.00; settlement lag 0d
+12,GT-S0004,CLEAN,pay_SA00004,led_SB00004,Stage 1 exact match on order_ref + amount + date window.,identical amount 5103.25; settlement lag 1d
+12,GT-S0005,CLEAN,pay_SA00005,led_SB00005,Stage 1 exact match on order_ref + amount + date window.,identical amount 44940.99; settlement lag 1d
+12,GT-S0006,CLEAN,pay_SA00006,led_SB00006,Stage 1 exact match on order_ref + amount + date window.,identical amount 4505.50; settlement lag 1d
+12,GT-S0007,CLEAN,pay_SA00007,led_SB00007,Stage 1 exact match on order_ref + amount + date window.,identical amount 19907.99; settlement lag 0d
+12,GT-S0008,CLEAN,pay_SA00008,led_SB00008,Stage 1 exact match on order_ref + amount + date window.,identical amount 23940.50; settlement lag 0d
+12,GT-S0009,CLEAN,pay_SA00009,led_SB00009,Stage 1 exact match on order_ref + amount + date window.,identical amount 9351.00; settlement lag 0d
+12,GT-S0010,CLEAN,pay_SA00010,led_SB00010,Stage 1 exact match on order_ref + amount + date window.,identical amount 36558.50; settlement lag 1d
+12,GT-S0011,CLEAN,pay_SA00011,led_SB00011,Stage 1 exact match on order_ref + amount + date window.,identical amount 36402.00; settlement lag 0d
+12,GT-S0012,CLEAN,pay_SA00012,led_SB00012,Stage 1 exact match on order_ref + amount + date window.,identical amount 20519.25; settlement lag 2d
+12,GT-S0013,CLEAN,pay_SA00013,led_SB00013,Stage 1 exact match on order_ref + amount + date window.,identical amount 27082.99; settlement lag 0d
+12,GT-S0014,CLEAN,pay_SA00014,led_SB00014,Stage 1 exact match on order_ref + amount + date window.,identical amount 21026.75; settlement lag 1d
+12,GT-S0015,CLEAN,pay_SA00015,led_SB00015,Stage 1 exact match on order_ref + amount + date window.,identical amount 44821.50; settlement lag 0d
+12,GT-S0016,CLEAN,pay_SA00016,led_SB00016,Stage 1 exact match on order_ref + amount + date window.,identical amount 36380.75; settlement lag 0d
+12,GT-S0017,CLEAN,pay_SA00017,led_SB00017,Stage 1 exact match on order_ref + amount + date window.,identical amount 8706.25; settlement lag 0d
+12,GT-S0018,CLEAN,pay_SA00018,led_SB00018,Stage 1 exact match on order_ref + amount + date window.,identical amount 8387.50; settlement lag 1d
+12,GT-S0019,CLEAN,pay_SA00019,led_SB00019,Stage 1 exact match on order_ref + amount + date window.,identical amount 10864.00; settlement lag 1d
+12,GT-S0020,CLEAN,pay_SA00020,led_SB00020,Stage 1 exact match on order_ref + amount + date window.,identical amount 18865.99; settlement lag 1d
+12,GT-S0021,CLEAN,pay_SA00021,led_SB00021,Stage 1 exact match on order_ref + amount + date window.,identical amount 41869.50; settlement lag 0d
+12,GT-S0022,CLEAN,pay_SA00022,led_SB00022,Stage 1 exact match on order_ref + amount + date window.,identical amount 20095.50; settlement lag 0d
+12,GT-S0023,CLEAN,pay_SA00023,led_SB00023,Stage 1 exact match on order_ref + amount + date window.,identical amount 42257.00; settlement lag 2d
+12,GT-S0024,CLEAN,pay_SA00024,led_SB00024,Stage 1 exact match on order_ref + amount + date window.,identical amount 11469.75; settlement lag 2d
+12,GT-S0025,CLEAN,pay_SA00025,led_SB00025,Stage 1 exact match on order_ref + amount + date window.,identical amount 37187.00; settlement lag 0d
+12,GT-S0026,CLEAN,pay_SA00026,led_SB00026,Stage 1 exact match on order_ref + amount + date window.,identical amount 42288.99; settlement lag 1d
+12,GT-S0027,CLEAN,pay_SA00027,led_SB00027,Stage 1 exact match on order_ref + amount + date window.,identical amount 14065.99; settlement lag 1d
+12,GT-S0028,CLEAN,pay_SA00028,led_SB00028,Stage 1 exact match on order_ref + amount + date window.,identical amount 42126.00; settlement lag 2d
+12,GT-S0029,CLEAN,pay_SA00029,led_SB00029,Stage 1 exact match on order_ref + amount + date window.,identical amount 42318.00; settlement lag 0d
+12,GT-S0030,CLEAN,pay_SA00030,led_SB00030,Stage 1 exact match on order_ref + amount + date window.,identical amount 45141.25; settlement lag 1d
+12,GT-S0031,FEE_NET,pay_SA00031,led_SB00031,Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'Helios Cloud settlements are net of 2.00% fee'.,vendor=Helios Cloud; fee=2.00%; A_net=3813.91 B_gross=3891.75 fee_amt=77.84
+12,GT-S0032,FEE_NET,pay_SA00032,led_SB00032,Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'Helios Cloud settlements are net of 2.00% fee'.,vendor=Helios Cloud; fee=2.00%; A_net=6545.67 B_gross=6679.25 fee_amt=133.58
+12,GT-S0033,FEE_NET,pay_SA00033,led_SB00033,Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Quark Pay settlements are net of 2.36% fee'.,vendor=Quark Pay; fee=2.36%; A_net=16957.38 B_gross=17367.25 fee_amt=409.87
+12,GT-S0034,FEE_NET,pay_SA00034,led_SB00034,Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Quark Pay settlements are net of 2.36% fee'.,vendor=Quark Pay; fee=2.36%; A_net=12349.02 B_gross=12647.50 fee_amt=298.48
+12,GT-S0035,TIME_LAG,pay_SA00035,led_SB00035,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 5831.75; settlement lag 9d (outside 2-3d window)
+12,GT-S0036,TIME_LAG,pay_SA00036,led_SB00036,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 2742.99; settlement lag 10d (outside 2-3d window)
+12,GT-S0037,TIME_LAG,pay_SA00037,led_SB00037,Do not Stage-1 match; classify TIME_LAG and widen window once.,identical amount 2339.00; settlement lag 9d (outside 2-3d window)
+12,GT-S0038,FX_ROUND,pay_SA00038,led_SB00038,Fuzzy/tolerant match within paise band; log the amount delta.,A=2407.01 B=2407.00 delta=0.01 (paise-level)
+12,GT-S0039,FX_ROUND,pay_SA00039,led_SB00039,Fuzzy/tolerant match within paise band; log the amount delta.,A=1985.99 B=1986.00 delta=-0.01 (paise-level)
+12,GT-S0040,FX_ROUND,pay_SA00040,led_SB00040,Fuzzy/tolerant match within paise band; log the amount delta.,A=10482.27 B=10482.25 delta=0.02 (paise-level)
+12,GT-S0041,FX_ROUND,pay_SA00041,led_SB00041,Fuzzy/tolerant match within paise band; log the amount delta.,A=5764.47 B=5764.50 delta=-0.03 (paise-level)

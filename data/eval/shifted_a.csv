@@ -1,0 +1,42 @@
+txn_id,order_ref,amount,settlement_date,description,currency
+pay_SA00009,order_S00009,9351.00,2026-11-16,Razorpay settlement | MediQuick Pharmacy | order_S00009,INR
+pay_SA00014,order_S00014,21026.75,2026-11-04,Razorpay settlement | Orbit Mobility | order_S00014,INR
+pay_SA00027,order_S00027,14065.99,2026-11-20,Razorpay settlement | Amber Books | order_S00027,INR
+pay_SA00024,order_S00024,11469.75,2026-11-22,Razorpay settlement | Orbit Mobility | order_S00024,INR
+pay_SA00013,order_S00013,27082.99,2026-11-19,Razorpay settlement | PixelForge Studio | order_S00013,INR
+pay_SA00029,order_S00029,42318.00,2026-11-16,Razorpay settlement | BrightPath Tuition | order_S00029,INR
+pay_SA00021,order_S00021,41869.50,2026-11-09,Razorpay settlement | MediQuick Pharmacy | order_S00021,INR
+pay_SA00031,order_S00031,3813.91,2026-11-03,Razorpay settlement | Helios Cloud | order_S00031 | net of 2.00% fee,INR
+pay_SA00041,order_S00041,5764.47,2026-11-11,Razorpay settlement | Maple Dental | order_S00041,INR
+pay_SA00038,order_S00038,2407.01,2026-11-15,Razorpay settlement | Harbour Linens | order_S00038,INR
+pay_SA00039,order_S00039,1985.99,2026-11-11,Razorpay settlement | Orbit Mobility | order_S00039,INR
+pay_SA00035,order_S00035,5831.75,2026-11-15,Razorpay settlement | SilkRoute Exports | order_S00035 | settled T+9,INR
+pay_SA00005,order_S00005,44940.99,2026-11-12,Razorpay settlement | Leaf & Bean Cafe | order_S00005,INR
+pay_SA00003,order_S00003,32441.00,2026-11-04,Razorpay settlement | Cedar Homewares | order_S00003,INR
+pay_SA00028,order_S00028,42126.00,2026-11-18,Razorpay settlement | Summit Fitness | order_S00028,INR
+pay_SA00004,order_S00004,5103.25,2026-11-07,Razorpay settlement | Maple Dental | order_S00004,INR
+pay_SA00001,order_S00001,37059.00,2026-11-10,Razorpay settlement | Indigo Travel | order_S00001,INR
+pay_SA00018,order_S00018,8387.50,2026-11-06,Razorpay settlement | Maple Dental | order_S00018,INR
+pay_SA00023,order_S00023,42257.00,2026-11-21,Razorpay settlement | Kite Kids Wear | order_S00023,INR
+pay_SA00022,order_S00022,20095.50,2026-11-18,Razorpay settlement | Amber Books | order_S00022,INR
+pay_SA00036,order_S00036,2742.99,2026-11-16,Razorpay settlement | PixelForge Studio | order_S00036 | settled T+10,INR
+pay_SA00016,order_S00016,36380.75,2026-11-19,Razorpay settlement | Indigo Travel | order_S00016,INR
+pay_SA00010,order_S00010,36558.50,2026-11-13,Razorpay settlement | SilkRoute Exports | order_S00010,INR
+pay_SA00025,order_S00025,37187.00,2026-11-01,Razorpay settlement | SilkRoute Exports | order_S00025,INR
+pay_SA00034,order_S00034,12349.02,2026-11-06,Razorpay settlement | Quark Pay | order_S00034 | net of 2.36% fee,INR
+pay_SA00012,order_S00012,20519.25,2026-11-18,Razorpay settlement | Leaf & Bean Cafe | order_S00012,INR
+pay_SA00019,order_S00019,10864.00,2026-11-09,Razorpay settlement | Orbit Mobility | order_S00019,INR
+pay_SA00007,order_S00007,19907.99,2026-11-06,Razorpay settlement | Indigo Travel | order_S00007,INR
+pay_SA00008,order_S00008,23940.50,2026-11-08,Razorpay settlement | Volt Auto Parts | order_S00008,INR
+pay_SA00015,order_S00015,44821.50,2026-11-12,Razorpay settlement | Harbour Linens | order_S00015,INR
+pay_SA00017,order_S00017,8706.25,2026-11-17,Razorpay settlement | Volt Auto Parts | order_S00017,INR
+pay_SA00026,order_S00026,42288.99,2026-11-20,Razorpay settlement | Urban Grocery | order_S00026,INR
+pay_SA00006,order_S00006,4505.50,2026-11-19,Razorpay settlement | Cedar Homewares | order_S00006,INR
+pay_SA00002,order_S00002,29496.00,2026-11-21,Razorpay settlement | Cedar Homewares | order_S00002,INR
+pay_SA00037,order_S00037,2339.00,2026-11-13,Razorpay settlement | Kite Kids Wear | order_S00037 | settled T+9,INR
+pay_SA00020,order_S00020,18865.99,2026-11-04,Razorpay settlement | Kite Kids Wear | order_S00020,INR
+pay_SA00040,order_S00040,10482.27,2026-11-08,Razorpay settlement | Maple Dental | order_S00040,INR
+pay_SA00030,order_S00030,45141.25,2026-11-11,Razorpay settlement | Volt Auto Parts | order_S00030,INR
+pay_SA00033,order_S00033,16957.38,2026-11-08,Razorpay settlement | Quark Pay | order_S00033 | net of 2.36% fee,INR
+pay_SA00032,order_S00032,6545.67,2026-11-15,Razorpay settlement | Helios Cloud | order_S00032 | net of 2.00% fee,INR
+pay_SA00011,order_S00011,36402.00,2026-11-20,Razorpay settlement | Volt Auto Parts | order_S00011,INR

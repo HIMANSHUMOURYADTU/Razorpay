@@ -1,0 +1,66 @@
+txn_id,order_ref,amount,settlement_date,description,currency
+pay_VA00055,order_V00045,7632.00,2026-08-22,Razorpay settlement | BrightPath Tuition | order_V00045 | settled T+10,INR
+pay_VA00042,order_V00032,860.99,2026-08-05,Razorpay settlement | MediQuick Pharmacy | order_V00032,INR
+pay_VA00032,order_V00026,2174.99,2026-08-07,Razorpay settlement | BrightPath Tuition | order_V00026 | duplicate capture,INR
+pay_VA00025,order_V00023,4896.00,2026-08-22,Razorpay settlement | Orbit Mobility | order_V00023 | duplicate capture,INR
+pay_VA00027,order_V00024,6881.50,2026-08-05,Razorpay settlement | Harbour Linens | order_V00024 | duplicate capture,INR
+pay_VA00062,order_V00052,6904.75,2026-08-02,Razorpay settlement | MediQuick Pharmacy | order_V00052 | Aug cycle,INR
+pay_VA00001,order_V00001,43278.50,2026-08-28,Razorpay settlement | Cedar Homewares | order_V00001,INR
+pay_VA00064,order_V00054,6922.99,2026-08-04,Razorpay settlement | Summit Fitness | order_V00054 | Aug cycle,INR
+pay_VA00036,order_V00028,8167.50,2026-08-10,Razorpay settlement | Maple Dental | order_V00028 | split 2/2 8167.50,INR
+pay_VA00056,order_V00046,7425.00,2026-08-12,Razorpay settlement | MediQuick Pharmacy | order_V00046 | settled T+9,INR
+pay_VA00044,order_V00034,13994.22,2026-08-23,Razorpay settlement | Indigo Travel | order_V00034,INR
+pay_VA00037,order_V00029,10908.30,2026-08-02,Razorpay settlement | Maple Dental | order_V00029 | split 1/2 10908.30,INR
+pay_VA00010,order_V00010,9265.00,2026-08-04,Razorpay settlement | MediQuick Pharmacy | order_V00010,INR
+pay_VA00007,order_V00007,42587.75,2026-08-16,Razorpay settlement | Leaf & Bean Cafe | order_V00007,INR
+pay_VA00002,order_V00002,5591.50,2026-08-22,Razorpay settlement | SilkRoute Exports | order_V00002,INR
+pay_VA00029,order_V00025,9252.99,2026-08-05,Razorpay settlement | Cedar Homewares | order_V00025 | duplicate capture,INR
+pay_VA00039,order_V00030,1498.10,2026-08-18,Razorpay settlement | PixelForge Studio | order_V00030 | split 1/2 1498.10,INR
+pay_VA00057,order_V00047,6508.00,2026-08-27,Razorpay settlement | Kite Kids Wear | order_V00047 | settled T+10,INR
+pay_VA00040,order_V00030,2247.15,2026-08-19,Razorpay settlement | PixelForge Studio | order_V00030 | split 2/2 2247.15,INR
+pay_VA00053,order_V00043,20632.43,2026-08-02,Razorpay settlement | CloudStack SaaS | order_V00043 | net of 2.00% fee,INR
+pay_VA00034,order_V00027,10034.10,2026-08-07,Razorpay settlement | BrightPath Tuition | order_V00027 | split 2/2 10034.10,INR
+pay_VA00016,order_V00016,24124.75,2026-08-24,Razorpay settlement | PixelForge Studio | order_V00016,INR
+pay_VA00006,order_V00006,8625.75,2026-08-25,Razorpay settlement | Maple Dental | order_V00006,INR
+pay_VA00011,order_V00011,6878.50,2026-08-27,Razorpay settlement | Maple Dental | order_V00011,INR
+pay_VA00028,order_V00024,6881.50,2026-08-05,Razorpay settlement | Harbour Linens | order_V00024 | duplicate capture,INR
+pay_VA00015,order_V00015,11098.75,2026-08-15,Razorpay settlement | Volt Auto Parts | order_V00015,INR
+pay_VA00024,order_V00022,4071.99,2026-08-21,Razorpay settlement | Maple Dental | order_V00022 | duplicate capture,INR
+pay_VA00038,order_V00029,5873.70,2026-08-03,Razorpay settlement | Maple Dental | order_V00029 | split 2/2 5873.70,INR
+pay_VA00014,order_V00014,10883.00,2026-08-29,Razorpay settlement | Orbit Mobility | order_V00014,INR
+pay_VA00059,order_V00049,10496.24,2026-08-04,Razorpay settlement | Urban Grocery | order_V00049 | net of refund 3498.75,INR
+pay_VA00043,order_V00033,2792.02,2026-08-03,Razorpay settlement | Volt Auto Parts | order_V00033,INR
+pay_VA00008,order_V00008,1444.00,2026-08-10,Razorpay settlement | SilkRoute Exports | order_V00008,INR
+pay_VA00018,order_V00018,35246.00,2026-08-11,Razorpay settlement | MediQuick Pharmacy | order_V00018,INR
+pay_VA00022,order_V00021,9441.25,2026-08-07,Razorpay settlement | Kite Kids Wear | order_V00021 | duplicate capture,INR
+pay_VA00004,order_V00004,39246.75,2026-08-04,Razorpay settlement | Orbit Mobility | order_V00004,INR
+pay_VA00065,order_V00055,846.00,2026-08-13,Razorpay settlement | SilkRoute Exports | order_V00055 | NO LEDGER COUNTERPART,INR
+pay_VA00051,order_V00041,21391.22,2026-08-04,Razorpay settlement | Nimbus Hosting | order_V00041 | net of 2.36% fee,INR
+pay_VA00048,order_V00038,13115.99,2026-08-09,Razorpay settlement | Leaf & Bean Cafe | order_V00038,INR
+pay_VA00047,order_V00037,2849.51,2026-08-25,Razorpay settlement | Maple Dental | order_V00037,INR
+pay_VA00017,order_V00017,40265.00,2026-08-26,Razorpay settlement | Harbour Linens | order_V00017,INR
+pay_VA00061,order_V00051,10321.59,2026-08-14,Razorpay settlement | Urban Grocery | order_V00051 | net of refund 2580.40,INR
+pay_VA00035,order_V00028,8167.50,2026-08-09,Razorpay settlement | Maple Dental | order_V00028 | split 1/2 8167.50,INR
+pay_VA00026,order_V00023,4896.00,2026-08-22,Razorpay settlement | Orbit Mobility | order_V00023 | duplicate capture,INR
+pay_VA00033,order_V00027,6689.40,2026-08-06,Razorpay settlement | BrightPath Tuition | order_V00027 | split 1/2 6689.40,INR
+pay_VA00020,order_V00020,30506.99,2026-08-11,Razorpay settlement | Harbour Linens | order_V00020,INR
+pay_VA00021,order_V00021,9441.25,2026-08-07,Razorpay settlement | Kite Kids Wear | order_V00021 | duplicate capture,INR
+pay_VA00049,order_V00039,5382.16,2026-08-09,Razorpay settlement | CloudStack SaaS | order_V00039 | net of 2.00% fee,INR
+pay_VA00054,order_V00044,4563.75,2026-08-14,Razorpay settlement | Amber Books | order_V00044 | settled T+9,INR
+pay_VA00058,order_V00048,10694.99,2026-08-20,Razorpay settlement | Kite Kids Wear | order_V00048 | net of refund 7130.00,INR
+pay_VA00013,order_V00013,40753.00,2026-08-21,Razorpay settlement | Indigo Travel | order_V00013,INR
+pay_VA00019,order_V00019,12965.00,2026-08-24,Razorpay settlement | Indigo Travel | order_V00019,INR
+pay_VA00003,order_V00003,23175.00,2026-08-22,Razorpay settlement | Indigo Travel | order_V00003,INR
+pay_VA00030,order_V00025,9252.99,2026-08-05,Razorpay settlement | Cedar Homewares | order_V00025 | duplicate capture,INR
+pay_VA00050,order_V00040,14951.61,2026-08-27,Razorpay settlement | CloudStack SaaS | order_V00040 | net of 2.00% fee,INR
+pay_VA00046,order_V00036,1697.96,2026-08-09,Razorpay settlement | Indigo Travel | order_V00036,INR
+pay_VA00005,order_V00005,24936.75,2026-08-27,Razorpay settlement | Kite Kids Wear | order_V00005,INR
+pay_VA00009,order_V00009,22645.99,2026-08-16,Razorpay settlement | MediQuick Pharmacy | order_V00009,INR
+pay_VA00052,order_V00042,5011.85,2026-08-17,Razorpay settlement | Nimbus Hosting | order_V00042 | net of 2.36% fee,INR
+pay_VA00012,order_V00012,34756.00,2026-08-23,Razorpay settlement | Maple Dental | order_V00012,INR
+pay_VA00041,order_V00031,4262.26,2026-08-04,Razorpay settlement | SilkRoute Exports | order_V00031,INR
+pay_VA00031,order_V00026,2174.99,2026-08-07,Razorpay settlement | BrightPath Tuition | order_V00026 | duplicate capture,INR
+pay_VA00045,order_V00035,11959.30,2026-08-15,Razorpay settlement | Volt Auto Parts | order_V00035,INR
+pay_VA00063,order_V00053,1749.99,2026-08-03,Razorpay settlement | Amber Books | order_V00053 | Aug cycle,INR
+pay_VA00060,order_V00050,10407.75,2026-08-26,Razorpay settlement | Amber Books | order_V00050 | net of refund 3469.25,INR
+pay_VA00023,order_V00022,4071.99,2026-08-21,Razorpay settlement | Maple Dental | order_V00022 | duplicate capture,INR

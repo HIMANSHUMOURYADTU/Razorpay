@@ -1,0 +1,795 @@
+FINANCE CONTROLLER — SYNTHETIC DATA INJECTION SUMMARY
+Hidden labels live in data/ground_truth.csv. Matcher must ignore that file.
+Batches 1–3 are full-size closes (same mix, new IDs). Eval sets are separate.
+
+========================================================================
+BATCH1  |  A=88 rows  B=81 rows
+========================================================================
+[DUP] GT-0056
+  A: pay_A00056,pay_A00057
+  B: led_B00056
+  notes : two identical settlements of 7469.00 for order_00056; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-0057
+  A: pay_A00058,pay_A00059
+  B: led_B00057
+  notes : two identical settlements of 11596.25 for order_00057; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-0058
+  A: pay_A00060,pay_A00061
+  B: led_B00058
+  notes : two identical settlements of 7535.25 for order_00058; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-0059
+  A: pay_A00062,pay_A00063
+  B: led_B00059
+  notes : two identical settlements of 1687.75 for order_00059; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[SPLIT] GT-0060
+  A: pay_A00064,pay_A00065
+  B: led_B00060
+  notes : 2089.60 + 3134.40 = 5224.00 on order_00060
+  expect: Sum-match the two A rows to the single B row; do not 1:1 match.
+
+[SPLIT] GT-0061
+  A: pay_A00066,pay_A00067
+  B: led_B00061
+  notes : 6559.50 + 6559.49 = 13118.99 on order_00061
+  expect: Sum-match the two A rows to the single B row; do not 1:1 match.
+
+[SPLIT] GT-0062
+  A: pay_A00068,pay_A00069
+  B: led_B00062
+  notes : 6595.55 + 3551.45 = 10147.00 on order_00062
+  expect: Sum-match the two A rows to the single B row; do not 1:1 match.
+
+[FX_ROUND] GT-0063
+  A: pay_A00070
+  B: led_B00063
+  notes : A=7750.01 B=7750.00 delta=0.01 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-0064
+  A: pay_A00071
+  B: led_B00064
+  notes : A=7978.99 B=7979.00 delta=-0.01 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-0065
+  A: pay_A00072
+  B: led_B00065
+  notes : A=13639.01 B=13638.99 delta=0.02 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-0066
+  A: pay_A00073
+  B: led_B00066
+  notes : A=11084.47 B=11084.50 delta=-0.03 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-0067
+  A: pay_A00074
+  B: led_B00067
+  notes : A=12747.04 B=12746.99 delta=0.05 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-0068
+  A: pay_A00075
+  B: led_B00068
+  notes : A=8356.21 B=8356.25 delta=-0.04 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FEE_NET] GT-0069
+  A: pay_A00076
+  B: led_B00069
+  notes : vendor=CloudStack SaaS; fee=2.00%; A_net=3352.58 B_gross=3421.00 fee_amt=68.42
+  expect: Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.
+
+[FEE_NET] GT-0070
+  A: pay_A00077
+  B: led_B00070
+  notes : vendor=CloudStack SaaS; fee=2.00%; A_net=1538.85 B_gross=1570.25 fee_amt=31.40
+  expect: Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.
+
+[FEE_NET] GT-0071
+  A: pay_A00078
+  B: led_B00071
+  notes : vendor=Nimbus Hosting; fee=2.36%; A_net=16021.75 B_gross=16409.00 fee_amt=387.25
+  expect: Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.
+
+[FEE_NET] GT-0072
+  A: pay_A00079
+  B: led_B00072
+  notes : vendor=Nimbus Hosting; fee=2.36%; A_net=23751.66 B_gross=24325.75 fee_amt=574.09
+  expect: Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.
+
+[TIME_LAG] GT-0073
+  A: pay_A00080
+  B: led_B00073
+  notes : identical amount 8573.00; settlement lag 9d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[TIME_LAG] GT-0074
+  A: pay_A00081
+  B: led_B00074
+  notes : identical amount 4166.00; settlement lag 10d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[TIME_LAG] GT-0075
+  A: pay_A00082
+  B: led_B00075
+  notes : identical amount 5738.00; settlement lag 9d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[PARTIAL] GT-0076
+  A: pay_A00083
+  B: led_B00076
+  notes : original=16823.50 refund=6729.40 A_net=10094.10 (40% refunded)
+  expect: Match against adjusted (net-of-refund) amount; do not treat as full match.
+
+[PARTIAL] GT-0077
+  A: pay_A00084
+  B: led_B00077
+  notes : original=17840.00 refund=3568.00 A_net=14272.00 (20% refunded)
+  expect: Match against adjusted (net-of-refund) amount; do not treat as full match.
+
+[PARTIAL] GT-0078
+  A: pay_A00085
+  B: led_B00078
+  notes : original=3426.75 refund=685.35 A_net=2741.40 (20% refunded)
+  expect: Match against adjusted (net-of-refund) amount; do not treat as full match.
+
+[OOP] GT-0079
+  A: pay_A00086
+  B: led_B00079
+  notes : identical amount 5566.00; posting=2026-07-28 settlement=2026-08-02 (adjacent months)
+  expect: Flag out-of-period: ledger in July, settlement in August cycle.
+
+[OOP] GT-0080
+  A: pay_A00087
+  B: led_B00080
+  notes : identical amount 5770.00; posting=2026-07-29 settlement=2026-08-03 (adjacent months)
+  expect: Flag out-of-period: ledger in July, settlement in August cycle.
+
+[UNRESOLVED] GT-0081
+  A: pay_A00088
+  B: (none)
+  notes : orphan settlement pay_A00088 635.25 — no source_b row exists
+  expect: Stay UNRESOLVED. No plausible candidate. Do not force-match.
+
+[UNRESOLVED] GT-0082
+  A: (none)
+  B: led_B00081
+  notes : orphan ledger led_B00081 2615.50 — no source_a row exists
+  expect: Stay UNRESOLVED. No plausible candidate. Do not force-match.
+
+
+========================================================================
+BATCH2  |  A=88 rows  B=81 rows
+========================================================================
+[DUP] GT-20056
+  A: pay_2A00056,pay_2A00057
+  B: led_2B00056
+  notes : two identical settlements of 11897.25 for order_200056; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-20057
+  A: pay_2A00058,pay_2A00059
+  B: led_2B00057
+  notes : two identical settlements of 4049.00 for order_200057; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-20058
+  A: pay_2A00060,pay_2A00061
+  B: led_2B00058
+  notes : two identical settlements of 11076.00 for order_200058; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-20059
+  A: pay_2A00062,pay_2A00063
+  B: led_2B00059
+  notes : two identical settlements of 5741.99 for order_200059; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[SPLIT] GT-20060
+  A: pay_2A00064,pay_2A00065
+  B: led_2B00060
+  notes : 2386.80 + 3580.19 = 5966.99 on order_200060
+  expect: Sum-match the two A rows to the single B row; do not 1:1 match.
+
+[SPLIT] GT-20061
+  A: pay_2A00066,pay_2A00067
+  B: led_2B00061
+  notes : 1672.50 + 1672.50 = 3345.00 on order_200061
+  expect: Sum-match the two A rows to the single B row; do not 1:1 match.
+
+[SPLIT] GT-20062
+  A: pay_2A00068,pay_2A00069
+  B: led_2B00062
+  notes : 9192.30 + 4949.70 = 14142.00 on order_200062
+  expect: Sum-match the two A rows to the single B row; do not 1:1 match.
+
+[FX_ROUND] GT-20063
+  A: pay_2A00070
+  B: led_2B00063
+  notes : A=5990.01 B=5990.00 delta=0.01 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-20064
+  A: pay_2A00071
+  B: led_2B00064
+  notes : A=8430.99 B=8431.00 delta=-0.01 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-20065
+  A: pay_2A00072
+  B: led_2B00065
+  notes : A=13977.27 B=13977.25 delta=0.02 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-20066
+  A: pay_2A00073
+  B: led_2B00066
+  notes : A=3285.72 B=3285.75 delta=-0.03 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-20067
+  A: pay_2A00074
+  B: led_2B00067
+  notes : A=13641.55 B=13641.50 delta=0.05 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-20068
+  A: pay_2A00075
+  B: led_2B00068
+  notes : A=7536.95 B=7536.99 delta=-0.04 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FEE_NET] GT-20069
+  A: pay_2A00076
+  B: led_2B00069
+  notes : vendor=CloudStack SaaS; fee=2.00%; A_net=11820.75 B_gross=12061.99 fee_amt=241.24
+  expect: Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.
+
+[FEE_NET] GT-20070
+  A: pay_2A00077
+  B: led_2B00070
+  notes : vendor=CloudStack SaaS; fee=2.00%; A_net=4252.22 B_gross=4339.00 fee_amt=86.78
+  expect: Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.
+
+[FEE_NET] GT-20071
+  A: pay_2A00078
+  B: led_2B00071
+  notes : vendor=Nimbus Hosting; fee=2.36%; A_net=9267.00 B_gross=9490.99 fee_amt=223.99
+  expect: Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.
+
+[FEE_NET] GT-20072
+  A: pay_2A00079
+  B: led_2B00072
+  notes : vendor=Nimbus Hosting; fee=2.36%; A_net=19696.43 B_gross=20172.50 fee_amt=476.07
+  expect: Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.
+
+[TIME_LAG] GT-20073
+  A: pay_2A00080
+  B: led_2B00073
+  notes : identical amount 6111.00; settlement lag 9d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[TIME_LAG] GT-20074
+  A: pay_2A00081
+  B: led_2B00074
+  notes : identical amount 5925.00; settlement lag 10d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[TIME_LAG] GT-20075
+  A: pay_2A00082
+  B: led_2B00075
+  notes : identical amount 6413.99; settlement lag 9d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[PARTIAL] GT-20076
+  A: pay_2A00083
+  B: led_2B00076
+  notes : original=10363.50 refund=4145.40 A_net=6218.10 (40% refunded)
+  expect: Match against adjusted (net-of-refund) amount; do not treat as full match.
+
+[PARTIAL] GT-20077
+  A: pay_2A00084
+  B: led_2B00077
+  notes : original=1532.50 refund=306.50 A_net=1226.00 (20% refunded)
+  expect: Match against adjusted (net-of-refund) amount; do not treat as full match.
+
+[PARTIAL] GT-20078
+  A: pay_2A00085
+  B: led_2B00078
+  notes : original=14517.25 refund=5806.90 A_net=8710.35 (40% refunded)
+  expect: Match against adjusted (net-of-refund) amount; do not treat as full match.
+
+[OOP] GT-20079
+  A: pay_2A00086
+  B: led_2B00079
+  notes : identical amount 6557.25; posting=2026-07-28 settlement=2026-08-02 (adjacent months)
+  expect: Flag out-of-period: ledger in July, settlement in August cycle.
+
+[OOP] GT-20080
+  A: pay_2A00087
+  B: led_2B00080
+  notes : identical amount 6731.25; posting=2026-07-29 settlement=2026-08-03 (adjacent months)
+  expect: Flag out-of-period: ledger in July, settlement in August cycle.
+
+[UNRESOLVED] GT-20081
+  A: pay_2A00088
+  B: (none)
+  notes : orphan settlement pay_2A00088 3547.00 — no source_b row exists
+  expect: Stay UNRESOLVED. No plausible candidate. Do not force-match.
+
+[UNRESOLVED] GT-20082
+  A: (none)
+  B: led_2B00081
+  notes : orphan ledger led_2B00081 1207.25 — no source_a row exists
+  expect: Stay UNRESOLVED. No plausible candidate. Do not force-match.
+
+
+========================================================================
+BATCH3  |  A=88 rows  B=81 rows
+========================================================================
+[DUP] GT-30056
+  A: pay_3A00056,pay_3A00057
+  B: led_3B00056
+  notes : two identical settlements of 10735.75 for order_300056; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-30057
+  A: pay_3A00058,pay_3A00059
+  B: led_3B00057
+  notes : two identical settlements of 5489.99 for order_300057; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-30058
+  A: pay_3A00060,pay_3A00061
+  B: led_3B00058
+  notes : two identical settlements of 10746.99 for order_300058; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-30059
+  A: pay_3A00062,pay_3A00063
+  B: led_3B00059
+  notes : two identical settlements of 11230.00 for order_300059; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[SPLIT] GT-30060
+  A: pay_3A00064,pay_3A00065
+  B: led_3B00060
+  notes : 2592.70 + 3889.05 = 6481.75 on order_300060
+  expect: Sum-match the two A rows to the single B row; do not 1:1 match.
+
+[SPLIT] GT-30061
+  A: pay_3A00066,pay_3A00067
+  B: led_3B00061
+  notes : 1645.50 + 1645.50 = 3291.00 on order_300061
+  expect: Sum-match the two A rows to the single B row; do not 1:1 match.
+
+[SPLIT] GT-30062
+  A: pay_3A00068,pay_3A00069
+  B: led_3B00062
+  notes : 2010.78 + 1082.72 = 3093.50 on order_300062
+  expect: Sum-match the two A rows to the single B row; do not 1:1 match.
+
+[FX_ROUND] GT-30063
+  A: pay_3A00070
+  B: led_3B00063
+  notes : A=2553.01 B=2553.00 delta=0.01 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-30064
+  A: pay_3A00071
+  B: led_3B00064
+  notes : A=7206.99 B=7207.00 delta=-0.01 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-30065
+  A: pay_3A00072
+  B: led_3B00065
+  notes : A=9237.02 B=9237.00 delta=0.02 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-30066
+  A: pay_3A00073
+  B: led_3B00066
+  notes : A=3094.97 B=3095.00 delta=-0.03 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-30067
+  A: pay_3A00074
+  B: led_3B00067
+  notes : A=5235.80 B=5235.75 delta=0.05 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-30068
+  A: pay_3A00075
+  B: led_3B00068
+  notes : A=2286.21 B=2286.25 delta=-0.04 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FEE_NET] GT-30069
+  A: pay_3A00076
+  B: led_3B00069
+  notes : vendor=CloudStack SaaS; fee=2.00%; A_net=8715.13 B_gross=8892.99 fee_amt=177.86
+  expect: Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.
+
+[FEE_NET] GT-30070
+  A: pay_3A00077
+  B: led_3B00070
+  notes : vendor=CloudStack SaaS; fee=2.00%; A_net=23126.29 B_gross=23598.25 fee_amt=471.96
+  expect: Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.
+
+[FEE_NET] GT-30071
+  A: pay_3A00078
+  B: led_3B00071
+  notes : vendor=Nimbus Hosting; fee=2.36%; A_net=19295.62 B_gross=19762.00 fee_amt=466.38
+  expect: Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.
+
+[FEE_NET] GT-30072
+  A: pay_3A00079
+  B: led_3B00072
+  notes : vendor=Nimbus Hosting; fee=2.36%; A_net=14088.48 B_gross=14429.00 fee_amt=340.52
+  expect: Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.
+
+[TIME_LAG] GT-30073
+  A: pay_3A00080
+  B: led_3B00073
+  notes : identical amount 2624.25; settlement lag 9d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[TIME_LAG] GT-30074
+  A: pay_3A00081
+  B: led_3B00074
+  notes : identical amount 4895.50; settlement lag 10d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[TIME_LAG] GT-30075
+  A: pay_3A00082
+  B: led_3B00075
+  notes : identical amount 6686.00; settlement lag 9d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[PARTIAL] GT-30076
+  A: pay_3A00083
+  B: led_3B00076
+  notes : original=2020.50 refund=808.20 A_net=1212.30 (40% refunded)
+  expect: Match against adjusted (net-of-refund) amount; do not treat as full match.
+
+[PARTIAL] GT-30077
+  A: pay_3A00084
+  B: led_3B00077
+  notes : original=8453.75 refund=1690.75 A_net=6763.00 (20% refunded)
+  expect: Match against adjusted (net-of-refund) amount; do not treat as full match.
+
+[PARTIAL] GT-30078
+  A: pay_3A00085
+  B: led_3B00078
+  notes : original=16413.75 refund=4103.44 A_net=12310.31 (25% refunded)
+  expect: Match against adjusted (net-of-refund) amount; do not treat as full match.
+
+[OOP] GT-30079
+  A: pay_3A00086
+  B: led_3B00079
+  notes : identical amount 1855.00; posting=2026-07-28 settlement=2026-08-02 (adjacent months)
+  expect: Flag out-of-period: ledger in July, settlement in August cycle.
+
+[OOP] GT-30080
+  A: pay_3A00087
+  B: led_3B00080
+  notes : identical amount 1204.00; posting=2026-07-29 settlement=2026-08-03 (adjacent months)
+  expect: Flag out-of-period: ledger in July, settlement in August cycle.
+
+[UNRESOLVED] GT-30081
+  A: pay_3A00088
+  B: (none)
+  notes : orphan settlement pay_3A00088 775.00 — no source_b row exists
+  expect: Stay UNRESOLVED. No plausible candidate. Do not force-match.
+
+[UNRESOLVED] GT-30082
+  A: (none)
+  B: led_3B00081
+  notes : orphan ledger led_3B00081 2501.00 — no source_a row exists
+  expect: Stay UNRESOLVED. No plausible candidate. Do not force-match.
+
+
+========================================================================
+EVAL_EASY  |  A=40 rows  B=40 rows
+========================================================================
+
+========================================================================
+EVAL_ADVERSARIAL  |  A=65 rows  B=55 rows
+========================================================================
+[DUP] GT-V0021
+  A: pay_VA00021,pay_VA00022
+  B: led_VB00021
+  notes : two identical settlements of 9441.25 for order_V00021; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-V0022
+  A: pay_VA00023,pay_VA00024
+  B: led_VB00022
+  notes : two identical settlements of 4071.99 for order_V00022; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-V0023
+  A: pay_VA00025,pay_VA00026
+  B: led_VB00023
+  notes : two identical settlements of 4896.00 for order_V00023; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-V0024
+  A: pay_VA00027,pay_VA00028
+  B: led_VB00024
+  notes : two identical settlements of 6881.50 for order_V00024; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-V0025
+  A: pay_VA00029,pay_VA00030
+  B: led_VB00025
+  notes : two identical settlements of 9252.99 for order_V00025; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[DUP] GT-V0026
+  A: pay_VA00031,pay_VA00032
+  B: led_VB00026
+  notes : two identical settlements of 2174.99 for order_V00026; ledger has a single row
+  expect: One A row can match B; the second A row is a duplicate settlement and must be flagged DUP, not force-matched.
+
+[SPLIT] GT-V0027
+  A: pay_VA00033,pay_VA00034
+  B: led_VB00027
+  notes : 6689.40 + 10034.10 = 16723.50 on order_V00027
+  expect: Sum-match the two A rows to the single B row; do not 1:1 match.
+
+[SPLIT] GT-V0028
+  A: pay_VA00035,pay_VA00036
+  B: led_VB00028
+  notes : 8167.50 + 8167.50 = 16335.00 on order_V00028
+  expect: Sum-match the two A rows to the single B row; do not 1:1 match.
+
+[SPLIT] GT-V0029
+  A: pay_VA00037,pay_VA00038
+  B: led_VB00029
+  notes : 10908.30 + 5873.70 = 16782.00 on order_V00029
+  expect: Sum-match the two A rows to the single B row; do not 1:1 match.
+
+[SPLIT] GT-V0030
+  A: pay_VA00039,pay_VA00040
+  B: led_VB00030
+  notes : 1498.10 + 2247.15 = 3745.25 on order_V00030
+  expect: Sum-match the two A rows to the single B row; do not 1:1 match.
+
+[FX_ROUND] GT-V0031
+  A: pay_VA00041
+  B: led_VB00031
+  notes : A=4262.26 B=4262.25 delta=0.01 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-V0032
+  A: pay_VA00042
+  B: led_VB00032
+  notes : A=860.99 B=861.00 delta=-0.01 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-V0033
+  A: pay_VA00043
+  B: led_VB00033
+  notes : A=2792.02 B=2792.00 delta=0.02 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-V0034
+  A: pay_VA00044
+  B: led_VB00034
+  notes : A=13994.22 B=13994.25 delta=-0.03 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-V0035
+  A: pay_VA00045
+  B: led_VB00035
+  notes : A=11959.30 B=11959.25 delta=0.05 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-V0036
+  A: pay_VA00046
+  B: led_VB00036
+  notes : A=1697.96 B=1698.00 delta=-0.04 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-V0037
+  A: pay_VA00047
+  B: led_VB00037
+  notes : A=2849.51 B=2849.50 delta=0.01 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-V0038
+  A: pay_VA00048
+  B: led_VB00038
+  notes : A=13115.99 B=13116.00 delta=-0.01 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FEE_NET] GT-V0039
+  A: pay_VA00049
+  B: led_VB00039
+  notes : vendor=CloudStack SaaS; fee=2.00%; A_net=5382.16 B_gross=5492.00 fee_amt=109.84
+  expect: Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.
+
+[FEE_NET] GT-V0040
+  A: pay_VA00050
+  B: led_VB00040
+  notes : vendor=CloudStack SaaS; fee=2.00%; A_net=14951.61 B_gross=15256.75 fee_amt=305.14
+  expect: Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.
+
+[FEE_NET] GT-V0041
+  A: pay_VA00051
+  B: led_VB00041
+  notes : vendor=Nimbus Hosting; fee=2.36%; A_net=21391.22 B_gross=21908.25 fee_amt=517.03
+  expect: Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.
+
+[FEE_NET] GT-V0042
+  A: pay_VA00052
+  B: led_VB00042
+  notes : vendor=Nimbus Hosting; fee=2.36%; A_net=5011.85 B_gross=5132.99 fee_amt=121.14
+  expect: Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Nimbus Hosting settlements are net of 2.36% fee'.
+
+[FEE_NET] GT-V0043
+  A: pay_VA00053
+  B: led_VB00043
+  notes : vendor=CloudStack SaaS; fee=2.00%; A_net=20632.43 B_gross=21053.50 fee_amt=421.07
+  expect: Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'CloudStack SaaS settlements are net of 2.00% fee'.
+
+[TIME_LAG] GT-V0044
+  A: pay_VA00054
+  B: led_VB00044
+  notes : identical amount 4563.75; settlement lag 9d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[TIME_LAG] GT-V0045
+  A: pay_VA00055
+  B: led_VB00045
+  notes : identical amount 7632.00; settlement lag 10d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[TIME_LAG] GT-V0046
+  A: pay_VA00056
+  B: led_VB00046
+  notes : identical amount 7425.00; settlement lag 9d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[TIME_LAG] GT-V0047
+  A: pay_VA00057
+  B: led_VB00047
+  notes : identical amount 6508.00; settlement lag 10d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[PARTIAL] GT-V0048
+  A: pay_VA00058
+  B: led_VB00048
+  notes : original=17824.99 refund=7130.00 A_net=10694.99 (40% refunded)
+  expect: Match against adjusted (net-of-refund) amount; do not treat as full match.
+
+[PARTIAL] GT-V0049
+  A: pay_VA00059
+  B: led_VB00049
+  notes : original=13994.99 refund=3498.75 A_net=10496.24 (25% refunded)
+  expect: Match against adjusted (net-of-refund) amount; do not treat as full match.
+
+[PARTIAL] GT-V0050
+  A: pay_VA00060
+  B: led_VB00050
+  notes : original=13877.00 refund=3469.25 A_net=10407.75 (25% refunded)
+  expect: Match against adjusted (net-of-refund) amount; do not treat as full match.
+
+[PARTIAL] GT-V0051
+  A: pay_VA00061
+  B: led_VB00051
+  notes : original=12901.99 refund=2580.40 A_net=10321.59 (20% refunded)
+  expect: Match against adjusted (net-of-refund) amount; do not treat as full match.
+
+[OOP] GT-V0052
+  A: pay_VA00062
+  B: led_VB00052
+  notes : identical amount 6904.75; posting=2026-07-28 settlement=2026-08-02 (adjacent months)
+  expect: Flag out-of-period: ledger in July, settlement in August cycle.
+
+[OOP] GT-V0053
+  A: pay_VA00063
+  B: led_VB00053
+  notes : identical amount 1749.99; posting=2026-07-29 settlement=2026-08-03 (adjacent months)
+  expect: Flag out-of-period: ledger in July, settlement in August cycle.
+
+[OOP] GT-V0054
+  A: pay_VA00064
+  B: led_VB00054
+  notes : identical amount 6922.99; posting=2026-07-30 settlement=2026-08-04 (adjacent months)
+  expect: Flag out-of-period: ledger in July, settlement in August cycle.
+
+[UNRESOLVED] GT-V0055
+  A: pay_VA00065
+  B: (none)
+  notes : orphan settlement pay_VA00065 846.00 — no source_b row exists
+  expect: Stay UNRESOLVED. No plausible candidate. Do not force-match.
+
+[UNRESOLVED] GT-V0056
+  A: (none)
+  B: led_VB00055
+  notes : orphan ledger led_VB00055 1686.99 — no source_a row exists
+  expect: Stay UNRESOLVED. No plausible candidate. Do not force-match.
+
+
+========================================================================
+EVAL_SHIFTED  |  A=41 rows  B=41 rows
+========================================================================
+[FEE_NET] GT-S0031
+  A: pay_SA00031
+  B: led_SB00031
+  notes : vendor=Helios Cloud; fee=2.00%; A_net=3813.91 B_gross=3891.75 fee_amt=77.84
+  expect: Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'Helios Cloud settlements are net of 2.00% fee'.
+
+[FEE_NET] GT-S0032
+  A: pay_SA00032
+  B: led_SB00032
+  notes : vendor=Helios Cloud; fee=2.00%; A_net=6545.67 B_gross=6679.25 fee_amt=133.58
+  expect: Reconstruct gross from A using 2.00% fee and match. Learnable rule: 'Helios Cloud settlements are net of 2.00% fee'.
+
+[FEE_NET] GT-S0033
+  A: pay_SA00033
+  B: led_SB00033
+  notes : vendor=Quark Pay; fee=2.36%; A_net=16957.38 B_gross=17367.25 fee_amt=409.87
+  expect: Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Quark Pay settlements are net of 2.36% fee'.
+
+[FEE_NET] GT-S0034
+  A: pay_SA00034
+  B: led_SB00034
+  notes : vendor=Quark Pay; fee=2.36%; A_net=12349.02 B_gross=12647.50 fee_amt=298.48
+  expect: Reconstruct gross from A using 2.36% fee and match. Learnable rule: 'Quark Pay settlements are net of 2.36% fee'.
+
+[TIME_LAG] GT-S0035
+  A: pay_SA00035
+  B: led_SB00035
+  notes : identical amount 5831.75; settlement lag 9d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[TIME_LAG] GT-S0036
+  A: pay_SA00036
+  B: led_SB00036
+  notes : identical amount 2742.99; settlement lag 10d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[TIME_LAG] GT-S0037
+  A: pay_SA00037
+  B: led_SB00037
+  notes : identical amount 2339.00; settlement lag 9d (outside 2-3d window)
+  expect: Do not Stage-1 match; classify TIME_LAG and widen window once.
+
+[FX_ROUND] GT-S0038
+  A: pay_SA00038
+  B: led_SB00038
+  notes : A=2407.01 B=2407.00 delta=0.01 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-S0039
+  A: pay_SA00039
+  B: led_SB00039
+  notes : A=1985.99 B=1986.00 delta=-0.01 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-S0040
+  A: pay_SA00040
+  B: led_SB00040
+  notes : A=10482.27 B=10482.25 delta=0.02 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+
+[FX_ROUND] GT-S0041
+  A: pay_SA00041
+  B: led_SB00041
+  notes : A=5764.47 B=5764.50 delta=-0.03 (paise-level)
+  expect: Fuzzy/tolerant match within paise band; log the amount delta.
+

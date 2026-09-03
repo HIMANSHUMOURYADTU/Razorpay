@@ -1,0 +1,41 @@
+txn_id,order_ref,amount,settlement_date,description,currency
+pay_EA00022,order_E00022,20003.00,2026-08-06,Razorpay settlement | MediQuick Pharmacy | order_E00022,INR
+pay_EA00008,order_E00008,43361.99,2026-08-09,Razorpay settlement | Indigo Travel | order_E00008,INR
+pay_EA00016,order_E00016,44419.00,2026-08-10,Razorpay settlement | Urban Grocery | order_E00016,INR
+pay_EA00001,order_E00001,47505.00,2026-08-12,Razorpay settlement | Maple Dental | order_E00001,INR
+pay_EA00006,order_E00006,37013.99,2026-08-22,Razorpay settlement | Maple Dental | order_E00006,INR
+pay_EA00028,order_E00028,5352.99,2026-08-13,Razorpay settlement | Indigo Travel | order_E00028,INR
+pay_EA00004,order_E00004,7342.00,2026-08-19,Razorpay settlement | Maple Dental | order_E00004,INR
+pay_EA00007,order_E00007,42369.50,2026-08-03,Razorpay settlement | Amber Books | order_E00007,INR
+pay_EA00027,order_E00027,3022.25,2026-08-02,Razorpay settlement | PixelForge Studio | order_E00027,INR
+pay_EA00030,order_E00030,26794.00,2026-08-11,Razorpay settlement | Leaf & Bean Cafe | order_E00030,INR
+pay_EA00013,order_E00013,22590.00,2026-08-13,Razorpay settlement | Harbour Linens | order_E00013,INR
+pay_EA00011,order_E00011,26515.00,2026-08-05,Razorpay settlement | Amber Books | order_E00011,INR
+pay_EA00023,order_E00023,21753.00,2026-08-02,Razorpay settlement | BrightPath Tuition | order_E00023,INR
+pay_EA00033,order_E00033,34588.00,2026-08-14,Razorpay settlement | PixelForge Studio | order_E00033,INR
+pay_EA00014,order_E00014,21508.99,2026-08-21,Razorpay settlement | Cedar Homewares | order_E00014,INR
+pay_EA00024,order_E00024,28473.00,2026-08-06,Razorpay settlement | Cedar Homewares | order_E00024,INR
+pay_EA00018,order_E00018,18152.00,2026-08-17,Razorpay settlement | PixelForge Studio | order_E00018,INR
+pay_EA00025,order_E00025,46365.00,2026-08-19,Razorpay settlement | Kite Kids Wear | order_E00025,INR
+pay_EA00020,order_E00020,34783.75,2026-08-10,Razorpay settlement | Harbour Linens | order_E00020,INR
+pay_EA00032,order_E00032,7187.00,2026-08-16,Razorpay settlement | PixelForge Studio | order_E00032,INR
+pay_EA00034,order_E00034,22500.00,2026-08-11,Razorpay settlement | Cedar Homewares | order_E00034,INR
+pay_EA00003,order_E00003,10390.75,2026-08-16,Razorpay settlement | MediQuick Pharmacy | order_E00003,INR
+pay_EA00017,order_E00017,28038.25,2026-08-21,Razorpay settlement | Amber Books | order_E00017,INR
+pay_EA00012,order_E00012,35015.00,2026-08-14,Razorpay settlement | Leaf & Bean Cafe | order_E00012,INR
+pay_EA00002,order_E00002,23295.00,2026-08-21,Razorpay settlement | BrightPath Tuition | order_E00002,INR
+pay_EA00019,order_E00019,28424.00,2026-08-12,Razorpay settlement | SilkRoute Exports | order_E00019,INR
+pay_EA00009,order_E00009,18159.75,2026-08-11,Razorpay settlement | Orbit Mobility | order_E00009,INR
+pay_EA00026,order_E00026,44031.99,2026-08-12,Razorpay settlement | Maple Dental | order_E00026,INR
+pay_EA00035,order_E00035,33705.75,2026-08-06,Razorpay settlement | Leaf & Bean Cafe | order_E00035,INR
+pay_EA00036,order_E00036,12957.99,2026-08-13,Razorpay settlement | Kite Kids Wear | order_E00036,INR
+pay_EA00015,order_E00015,3697.00,2026-08-08,Razorpay settlement | Leaf & Bean Cafe | order_E00015,INR
+pay_EA00031,order_E00031,40759.25,2026-08-12,Razorpay settlement | Volt Auto Parts | order_E00031,INR
+pay_EA00005,order_E00005,18506.50,2026-08-09,Razorpay settlement | Leaf & Bean Cafe | order_E00005,INR
+pay_EA00039,order_E00039,10268.99,2026-08-03,Razorpay settlement | Summit Fitness | order_E00039,INR
+pay_EA00010,order_E00010,650.00,2026-08-07,Razorpay settlement | SilkRoute Exports | order_E00010,INR
+pay_EA00040,order_E00040,41403.25,2026-08-17,Razorpay settlement | Volt Auto Parts | order_E00040,INR
+pay_EA00021,order_E00021,26153.50,2026-08-02,Razorpay settlement | MediQuick Pharmacy | order_E00021,INR
+pay_EA00037,order_E00037,42549.99,2026-08-05,Razorpay settlement | Cedar Homewares | order_E00037,INR
+pay_EA00029,order_E00029,37828.25,2026-08-15,Razorpay settlement | PixelForge Studio | order_E00029,INR
+pay_EA00038,order_E00038,9847.00,2026-08-07,Razorpay settlement | Leaf & Bean Cafe | order_E00038,INR
