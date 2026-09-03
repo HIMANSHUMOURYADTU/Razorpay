@@ -168,6 +168,10 @@ def build_report(
             "Each demo batch is a full-size close (same trap mix, new IDs). "
             "Compare n as well as percentages — batch 2/3 are not a 18-row slice."
         ),
+        "agent_charter": result.agent_charter,
+        "agent_trace": result.agent_trace,
+        "agent_proposals": result.agent_proposals,
+        "pending_proposals": sum(1 for p in result.agent_proposals if p.get("status") == "pending"),
     }
 
 

@@ -402,6 +402,69 @@ def tab_learning(batch1, batch2, batch3) -> None:
         st.info("Label FEE_NET / TIME_LAG policies, then run **Close 2** (and Close 3) in the sidebar.")
 
 
+def tab_agent(report: dict, memory) -> None:
+    from src.agent.operator import ProposalQueue
+
+    st.markdown("##### Controller agent")
+    st.caption(
+        report.get("agent_charter")
+        or "Tools under a finance charter. Matching math is unchanged. New policy waits on the operator."
+    )
+    trace = report.get("agent_trace") or []
+    if trace:
+        st.dataframe(
+            pd.DataFrame(
+                [
+                    {
+                        "tool": s.get("tool"),
+                        "why": s.get("why"),
+                        "matches_added": s.get("matches_added"),
+                        "unmatched_a_after": s.get("unmatched_a_after"),
+                        "seconds": s.get("seconds"),
+                    }
+                    for s in trace
+                ]
+            ),
+            width="stretch",
+            hide_index=True,
+            height=280,
+        )
+    else:
+        st.info("Run Close 1 to see which tools the agent selected.")
+
+    queue = ProposalQueue(DATA / "agent_proposals.json")
+    pending = queue.pending()
+    st.markdown(f"##### Operator queue · {len(pending)} pending")
+    st.caption("Agent drafted these. Nothing is policy until you Accept or Edit. Reject leaves the exception as-is.")
+    if not pending:
+        st.success("No pending proposals.")
+        return
+    labels = {
+        f"{p['proposal_id']} · {p.get('taxonomy_code')} · {p.get('exception_id')}": p for p in pending
+    }
+    chosen = labels[st.selectbox("Proposal", list(labels), key="agent_prop")]
+    st.write(chosen.get("agent_rationale") or "")
+    st.caption(chosen.get("evidence") or "")
+    executable = bool(chosen.get("executable", True))
+    if not executable:
+        st.warning("Not an executable learned_rule — Reject after you have read the ops action.")
+    rule = st.text_area("Proposed policy (you may edit)", value=chosen.get("proposed_rule") or "", key="agent_rule")
+    note = st.text_input("Operator note (optional)", key="agent_note")
+    c1, c2, c3 = st.columns(3)
+    if c1.button("Accept as-is", type="primary", disabled=not executable):
+        queue.accept(chosen["proposal_id"], memory, proposed_rule=rule, operator_note=note)
+        st.success("Accepted. Close 2 will apply this as learned_rule.")
+        st.rerun()
+    if c2.button("Accept with edits", disabled=not executable):
+        queue.accept(chosen["proposal_id"], memory, proposed_rule=rule, operator_note=note)
+        st.success("Edited and accepted into Exception Memory.")
+        st.rerun()
+    if c3.button("Reject"):
+        queue.reject(chosen["proposal_id"], operator_note=note or "rejected by operator")
+        st.info("Rejected. Exception stays on the list. No memory write.")
+        st.rerun()
+
+
 def tab_scale(report: dict) -> None:
     scale = report.get("scale") or {}
     per = scale.get("per_1000_records") or {}
@@ -431,7 +494,7 @@ def tab_why() -> None:
         """
 <div class="core glass">
   <h4>The bar</h4>
-  <p>Throughput + measured accuracy + an honest exception list. We optimize for <b>zero bad matches</b>, not fake 100% coverage. Exception Memory is human-validated policy, not ML. The LLM classifies a residue pair; the controller decides MATCH / HOLD / ESCALATE and owns cash impact.</p>
+  <p>Throughput + measured accuracy + an honest exception list. The PS asked for an <b>agent</b>: matching stages are tools; the agent selects them under a charter; out-of-box solutions are drafted for a human operator. We do not leave execution to the model.</p>
 </div>
         """,
         unsafe_allow_html=True,
@@ -447,9 +510,9 @@ def landing() -> None:
   <div class="core glass"><h4>02 Honest exceptions</h4><p>DUP, SPLIT, FEE_NET, TIME_LAG, PARTIAL, OOP, UNRESOLVED — ranked by ₹ at risk. HOLD or ESCALATE, never “no match”.</p></div>
 </div>
 <div class="core-grid">
-  <div class="core glass"><h4>03 Gated LLM</h4><p>Two records + taxonomy → JSON. Below 0.75 it stays an exception. Showing a refusal is the point.</p></div>
-  <div class="core glass"><h4>04 Memory compounds</h4><p>Label once. Close 2 and 3 are full-size reruns on new IDs. learned_rule fires before fuzzy/LLM.</p></div>
-  <div class="core glass"><h4>05 Live stress</h4><p>Inject a 3% fee, a T+20 lag, or an orphan while judges watch. Taxonomy must hold.</p></div>
+  <div class="core glass"><h4>03 Agent tools</h4><p>Rule, memory, fuzzy, classifier, gated LLM are tools. The agent chooses under a charter: never skip the floor, never auto-apply a new policy.</p></div>
+  <div class="core glass"><h4>04 Operator accept</h4><p>Out-of-box residue gets a drafted reason + solution. A human Accepts, Edits, or Rejects. Only then does Close 2 learn.</p></div>
+  <div class="core glass"><h4>05 Live stress</h4><p>Inject a 3% fee, a T+20 lag, or an orphan. Agent drafts. Operator decides.</p></div>
 </div>
         """,
         unsafe_allow_html=True,

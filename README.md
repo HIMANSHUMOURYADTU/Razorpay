@@ -17,6 +17,8 @@ We do not generate a close. We verify one. The LLM is a gated classifier on resi
 
 One line: **zero bad matches, not fake 100% coverage.**
 
+Simple English (why this PS, how it works, how to demo): [docs/GUIDE.md](docs/GUIDE.md)
+
 Full story (problem, why this PS, solution, mermaid architecture): [docs/PROJECT.md](docs/PROJECT.md)
 
 Speak-this: [docs/PITCH.md](docs/PITCH.md) · Extra LLD: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)

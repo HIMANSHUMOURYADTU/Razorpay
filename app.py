@@ -213,6 +213,7 @@ tabs = st.tabs(
     [
         "Command",
         "Exceptions",
+        "Agent",
         "Matches",
         "Memory",
         "Audit",
@@ -226,14 +227,16 @@ with tabs[0]:
 with tabs[1]:
     views.tab_exceptions(result, report, _memory())
 with tabs[2]:
-    views.tab_matches(result)
+    views.tab_agent(report, _memory())
 with tabs[3]:
-    views.tab_memory(_memory())
+    views.tab_matches(result)
 with tabs[4]:
-    views.tab_audit()
+    views.tab_memory(_memory())
 with tabs[5]:
-    views.tab_learning(st.session_state.batch1, st.session_state.batch2, st.session_state.batch3)
+    views.tab_audit()
 with tabs[6]:
+    views.tab_learning(st.session_state.batch1, st.session_state.batch2, st.session_state.batch3)
+with tabs[7]:
     views.tab_scale(report)
     if st.session_state.eval_pack and st.session_state.eval_pack is not batch:
         ev = st.session_state.eval_pack["report"]
@@ -241,5 +244,5 @@ with tabs[6]:
     ev = DATA / "eval"
     if (ev / "easy_a.csv").exists():
         st.caption("Eval files: data/eval/easy · adversarial · shifted (run from the sidebar).")
-with tabs[7]:
+with tabs[8]:
     views.tab_why()

@@ -102,6 +102,9 @@ class MatchResult:
     amount_matched_a: Decimal = Decimal("0.00")
     amount_exception_a: Decimal = Decimal("0.00")
     audit_events: list[dict] = field(default_factory=list)
+    agent_trace: list[dict] = field(default_factory=list)
+    agent_proposals: list[dict] = field(default_factory=list)
+    agent_charter: str = ""
 
     def matched_txn_ids(self) -> set[str]:
         ids: set[str] = set()

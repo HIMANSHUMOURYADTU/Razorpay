@@ -103,6 +103,36 @@ flowchart TB
 
 The matcher does **not** change when we swap `LLM_PROVIDER`. Groq / Gemini / Ollama / Anthropic only implement `classify_match`. The controller does **not** invent matches; it interprets leftovers.
 
+### 3.2b Agent = tools + charter + operator (this is the PS)
+
+The problem statement names an **agent**. Recon stages are **tools**. A finance charter still forbids skipping the deterministic floor or auto-writing policy.
+
+```mermaid
+flowchart TD
+    OBS[Agent observes unmatched A/B] --> PLAN[Planner: next tool + why]
+    PLAN --> T1[tool: rule_match]
+    PLAN --> T2[tool: apply_memory]
+    PLAN --> T3[tool: fuzzy_match]
+    PLAN --> T4[tool: classify_exceptions]
+    PLAN --> T5[tool: llm_assist]
+    PLAN --> T6[tool: propose_policies]
+    T1 --> OBS
+    T2 --> OBS
+    T3 --> OBS
+    T4 --> OBS
+    T5 --> OBS
+    T6 --> Q[Operator queue]
+    Q --> ACC[Human Accept]
+    Q --> EDT[Human Edit then Accept]
+    Q --> REJ[Human Reject]
+    ACC --> MEM[Exception Memory]
+    EDT --> MEM
+    REJ --> EX[Exception stays]
+    MEM -.->|next close| T2
+```
+
+Matching **math** is unchanged. Out-of-box residue gets a drafted reason + solution. **Execution is not left to the agent** — Accept / Edit / Reject is a human operator.
+
 ### 3.3 Pipeline (the recon engine)
 
 ```mermaid

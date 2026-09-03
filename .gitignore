@@ -6,6 +6,7 @@ venv/
 audit_log.jsonl
 .pytest_cache/
 data/last_exceptions.json
+data/agent_proposals.json
 data/_upload/
 data/_stress/
 .streamlit/secrets.toml

@@ -2,7 +2,7 @@
 
 Reconciliation agent for **Razorpay Buildathon**, track **AI Finance Controller**.
 
-Start here for the full story (problem, why this PS, solution, mermaid architecture): **[PROJECT.md](PROJECT.md)**.
+Start here if you want simple English + demo clicks: **[GUIDE.md](GUIDE.md)**.
 
 This file is extra LLD / runbook: problem recap, HLD, LLD, data, pipeline, taxonomy, LLM contract, exception memory, metrics, and how to run it.
 
