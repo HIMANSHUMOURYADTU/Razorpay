@@ -37,6 +37,9 @@ def test_agent_close_matches_old_rates(tmp_path: Path):
     assert tools[-1] == "stop"
     assert result.agent_proposals
     assert all(p.get("requires_human") for p in result.agent_proposals)
+    first = result.agent_proposals[0]
+    assert first.get("taxonomy_code") == "FEE_NET"
+    assert "CloudStack" in (first.get("vendor") or first.get("proposed_rule") or "")
     report = build_report(result, batch=1)
     assert report["offline_scoring"]["false"] == 0
     assert report["matched_a"] == 71

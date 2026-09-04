@@ -155,18 +155,18 @@ def test_llm_below_threshold_not_force_matched(audit):
     assert "pay_1" not in used_a
     assert remaining
     assert remaining[0].taxonomy_code == "FEE_NET"
-    assert "0.40" in remaining[0].reason
-    assert provider.calls
+    # FEE_NET is memory policy — LLM is not asked, pair stays for the operator.
+    assert provider.calls == []
 
 
-def test_llm_at_threshold_is_accepted(audit):
+def test_llm_never_auto_matches_fee_net(audit):
     a_rows = [
         row_a(
             "pay_1",
             "order_1",
             980.00,
             "2026-08-11",
-            desc="Razorpay settlement | CloudStack SaaS | order_1",
+            desc="Razorpay settlement | CloudStack SaaS | order_1 | net of 2.00% fee",
         )
     ]
     b_rows = [
@@ -175,11 +175,34 @@ def test_llm_at_threshold_is_accepted(audit):
             "order_1",
             1000.00,
             "2026-08-10",
-            desc="Ledger posting - CloudStack SaaS | order_1",
+            desc="Ledger posting - CloudStack SaaS | order_1 - gross",
         )
     ]
     _, exceptions, used_a, used_b, df_a, df_b = _classify(audit, a_rows, b_rows)
-    provider = ScriptedProvider(is_match=True, confidence=0.75, reason="fee-netted settlement")
+    provider = ScriptedProvider(is_match=True, confidence=0.99, reason="obvious fee net")
+    cfg = MatchConfig(llm_confidence_threshold=0.75, enable_llm=True)
+    llm_matches, remaining, *_ = run_llm_assist(
+        exceptions,
+        df_a,
+        df_b,
+        audit,
+        used_a,
+        used_b,
+        provider=provider,
+        config=cfg,
+    )
+    assert llm_matches == []
+    assert provider.calls == []
+    assert "pay_1" not in used_a
+    assert any(e.taxonomy_code == "FEE_NET" for e in remaining)
+
+
+def test_llm_at_threshold_is_accepted(audit):
+    a_rows = [row_a("pay_1", "order_1", 1000.20, "2026-08-10")]
+    b_rows = [row_b("led_1", "order_1", 1000.00, "2026-08-10")]
+    _, exceptions, used_a, used_b, df_a, df_b = _classify(audit, a_rows, b_rows, pre_match=False)
+    assert any(e.taxonomy_code == "FX_ROUND" for e in exceptions)
+    provider = ScriptedProvider(is_match=True, confidence=0.75, reason="rounding within policy")
     cfg = MatchConfig(llm_confidence_threshold=0.75, enable_llm=True)
     llm_matches, remaining, *_ = run_llm_assist(
         exceptions,
@@ -246,6 +269,12 @@ def test_time_lag_label_does_not_bind_a_vendor(tmp_path: Path):
     stored = next(p for p in mem.list_patterns() if p.taxonomy_code == "TIME_LAG")
     assert stored.vendor is None
     assert stored.date_window_days == 14
+
+
+def test_memory_reads_utf8_bom_from_powershell(tmp_path: Path):
+    path = tmp_path / "memory.json"
+    path.write_bytes(b'\xef\xbb\xbf{"patterns": []}')
+    assert ExceptionMemory(path).list_patterns() == []
 
 
 def test_every_exception_has_code_and_reason(audit):

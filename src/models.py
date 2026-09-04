@@ -17,6 +17,9 @@ TAXONOMY_CODES = (
 )
 
 LLM_RESOLVABLE = {"DUP", "SPLIT", "FX_ROUND", "FEE_NET", "TIME_LAG", "PARTIAL", "OOP"}
+# These stay on the exception list for operator Accept → Exception Memory.
+# LLM may not silent-match them even above the confidence floor.
+MEMORY_POLICY_CODES = frozenset({"FEE_NET", "TIME_LAG"})
 
 
 @dataclass

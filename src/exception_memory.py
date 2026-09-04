@@ -56,7 +56,8 @@ class ExceptionMemory:
     def _read(self) -> dict[str, Any]:
         if not self.path.exists():
             return {"patterns": []}
-        return json.loads(self.path.read_text(encoding="utf-8"))
+        # utf-8-sig strips a Windows BOM if PowerShell Set-Content wrote the file.
+        return json.loads(self.path.read_text(encoding="utf-8-sig"))
 
     def _write(self, payload: dict[str, Any]) -> None:
         self.path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
@@ -71,7 +72,7 @@ class ExceptionMemory:
     def load_exceptions(self, path: Path = LAST_EXCEPTIONS) -> list[dict[str, Any]]:
         if not path.exists():
             return []
-        return json.loads(path.read_text(encoding="utf-8"))
+        return json.loads(path.read_text(encoding="utf-8-sig"))
 
     def increment(self, pattern_id: str) -> None:
         payload = self._read()

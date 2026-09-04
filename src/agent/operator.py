@@ -28,7 +28,7 @@ class ProposalQueue:
     def _read(self) -> dict[str, Any]:
         if not self.path.exists():
             return {"proposals": []}
-        return json.loads(self.path.read_text(encoding="utf-8"))
+        return json.loads(self.path.read_text(encoding="utf-8-sig"))
 
     def _write(self, payload: dict[str, Any]) -> None:
         self.path.write_text(json.dumps(payload, indent=2, default=str), encoding="utf-8")

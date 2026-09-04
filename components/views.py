@@ -27,6 +27,22 @@ from components.charts import (
 REPO = Path(__file__).resolve().parent.parent
 
 
+def _load_jsonl(path: Path) -> list[dict]:
+    """Skip truncated / BOM / non-JSON lines so a mid-run refresh cannot crash the UI."""
+    if not path.exists():
+        return []
+    events: list[dict] = []
+    for line in path.read_text(encoding="utf-8-sig").splitlines():
+        text = line.strip()
+        if not text or text[0] != "{":
+            continue
+        try:
+            events.append(json.loads(text))
+        except json.JSONDecodeError:
+            continue
+    return events
+
+
 def inject_theme() -> None:
     st.markdown(f"<style>{load_theme()}</style>", unsafe_allow_html=True)
 
@@ -331,10 +347,10 @@ def tab_memory(memory) -> None:
 
 def tab_audit() -> None:
     path = REPO / "audit_log.jsonl"
-    if not path.exists():
+    events = _load_jsonl(path)
+    if not events:
         st.info("No audit log yet.")
         return
-    events = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
     st.caption(f"{len(events)} decisions — one JSON line per match or exception. The log is the product.")
     df = pd.DataFrame(
         [
@@ -402,6 +418,12 @@ def tab_learning(batch1, batch2, batch3) -> None:
         st.info("Label FEE_NET / TIME_LAG policies, then run **Close 2** (and Close 3) in the sidebar.")
 
 
+def _proposal_label(p: dict) -> str:
+    vendor = (p.get("vendor") or "").strip()
+    who = vendor or p.get("exception_id") or p.get("record_id") or ""
+    return f"{p['proposal_id']} · {p.get('taxonomy_code')} · {who}"
+
+
 def tab_agent(report: dict, memory) -> None:
     from src.agent.operator import ProposalQueue
 
@@ -439,20 +461,23 @@ def tab_agent(report: dict, memory) -> None:
     if not pending:
         st.success("No pending proposals.")
         return
-    labels = {
-        f"{p['proposal_id']} · {p.get('taxonomy_code')} · {p.get('exception_id')}": p for p in pending
-    }
+    labels = {_proposal_label(p): p for p in pending}
     chosen = labels[st.selectbox("Proposal", list(labels), key="agent_prop")]
     st.write(chosen.get("agent_rationale") or "")
     st.caption(chosen.get("evidence") or "")
     executable = bool(chosen.get("executable", True))
     if not executable:
         st.warning("Not an executable learned_rule — Reject after you have read the ops action.")
-    rule = st.text_area("Proposed policy (you may edit)", value=chosen.get("proposed_rule") or "", key="agent_rule")
-    note = st.text_input("Operator note (optional)", key="agent_note")
+    draft_rule = chosen.get("proposed_rule") or ""
+    rule = st.text_area(
+        "Proposed policy (you may edit)",
+        value=draft_rule,
+        key=f"agent_rule_{chosen.get('proposal_id')}",
+    )
+    note = st.text_input("Operator note (optional)", key=f"agent_note_{chosen.get('proposal_id')}")
     c1, c2, c3 = st.columns(3)
     if c1.button("Accept as-is", type="primary", disabled=not executable):
-        queue.accept(chosen["proposal_id"], memory, proposed_rule=rule, operator_note=note)
+        queue.accept(chosen["proposal_id"], memory, proposed_rule=draft_rule, operator_note=note)
         st.success("Accepted. Close 2 will apply this as learned_rule.")
         st.rerun()
     if c2.button("Accept with edits", disabled=not executable):

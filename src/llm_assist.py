@@ -11,7 +11,7 @@ from src.config import DEFAULT_CONFIG, MatchConfig
 from src.llm_providers import get_provider
 from src.llm_providers.base import LLMProvider, ProviderConfigError, RateLimitError
 from src.match_utils import amount_delta, date_delta_days, money
-from src.models import ExceptionRecord, LLM_RESOLVABLE, Match
+from src.models import ExceptionRecord, LLM_RESOLVABLE, MEMORY_POLICY_CODES, Match
 
 OFFICIAL_A = ["txn_id", "order_ref", "amount", "settlement_date", "description", "currency"]
 OFFICIAL_B = ["ledger_id", "order_ref", "amount", "posting_date", "description", "currency"]
@@ -88,6 +88,10 @@ def run_llm_assist(
         taxonomy = next((e.taxonomy_code for e in group if e.taxonomy_code in LLM_RESOLVABLE), group[0].taxonomy_code)
 
         if taxonomy not in LLM_RESOLVABLE:
+            continue
+        # Fee-net and date-lag are controller policy, not an LLM match.
+        # Leaving them as exceptions is what puts CloudStack on the Agent queue.
+        if taxonomy in MEMORY_POLICY_CODES:
             continue
 
         pairs: list[tuple[ExceptionRecord, pd.Series, pd.Series]] = []

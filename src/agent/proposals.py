@@ -38,7 +38,6 @@ def draft_proposals(
     b_lookup = {row["ledger_id"]: row for _, row in df_b.iterrows()}
     out: list[dict[str, Any]] = []
     seen_keys: set[tuple] = set()
-    n = 0
     for exc in exceptions:
         if exc.source != "A":
             continue
@@ -50,12 +49,21 @@ def draft_proposals(
             # one CloudStack 2% card, not four
             continue
         seen_keys.add(key)
-        n += 1
-        draft["proposal_id"] = f"prop_{n:03d}"
         draft["status"] = "pending"
         draft["requires_human"] = True
         draft["created_at"] = _now()
         out.append(draft)
+    # Executable memory policies first so CloudStack is prop_001, not buried under DUP.
+    rank = {"FEE_NET": 0, "TIME_LAG": 1, "OOP": 2}
+    out.sort(
+        key=lambda d: (
+            0 if d.get("executable") else 1,
+            rank.get(d.get("taxonomy_code"), 9),
+            d.get("exception_id") or "",
+        )
+    )
+    for i, draft in enumerate(out, 1):
+        draft["proposal_id"] = f"prop_{i:03d}"
     return out
 
 
